@@ -1,8 +1,15 @@
-glslang (7.9.2888+30-1) UNRELEASED; urgency=medium
+glslang (7.10.2984-1) UNRELEASED; urgency=medium
 
+  * new upstream version
+
+ -- Jeremy Hayes <jeremy@centaurus>  Thu, 15 Nov 2018 17:17:22 -0700
+
+glslang (7.9.2888+30-1) unstable; urgency=medium
+
+  [ Brett Johnson ]
   * New upstream release, plus needed bugfixes
 
- -- Brett Johnson <brett@linuxturtle.net>  Fri, 28 Sep 2018 15:19:23 -0600
+ -- Jeremy Hayes <jeremy@centaurus>  Thu, 15 Nov 2018 17:17:22 -0700
 
 glslang (7.8.2853-2) unstable; urgency=medium
 
