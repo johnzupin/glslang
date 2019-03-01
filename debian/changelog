@@ -1,3 +1,9 @@
+glslang (7.11.3113+32-1lunarg16.04.1.1) xenial; urgency=medium
+
+  * new upstream version
+
+ -- John Zupin <john@odin>  Wed, 27 Feb 2019 10:21:08 -0700
+
 glslang (7.10.2984+73-1lunarg16.04.1.1) xenial; urgency=medium
 
   * new upstream version
