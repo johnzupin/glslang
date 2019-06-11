@@ -6,6 +6,7 @@ Uploaders: Timo Aaltonen <tjaalton@debian.org>
 Build-Depends: debhelper (>= 9),
  cmake,
  spirv-headers,
+ python3-dev,
 Standards-Version: 4.2.0
 Homepage: https://github.com/KhronosGroup/glslang
 Vcs-Git: https://salsa.debian.org/xorg-team/vulkan/glslang.git
