@@ -3838,12 +3838,13 @@ void TBuiltIns::initialize(int version, EProfile profile, const SpvVersion& spvV
     }
 
     // GL_AMD_gcn_shader
-    if (profile != EEsProfile && version >= 450) {
+    if (profile != EEsProfile && version >= 440) {
         commonBuiltins.append(
             "float cubeFaceIndexAMD(vec3);"
             "vec2  cubeFaceCoordAMD(vec3);"
             "uint64_t timeAMD();"
 
+            "in int gl_SIMDGroupSizeAMD;"
             "\n");
     }
 
@@ -5033,6 +5034,10 @@ void TBuiltIns::initialize(int version, EProfile profile, const SpvVersion& spvV
     stageBuiltins[EShLangFragment].append(
         "void beginInvocationInterlockARB(void);"
         "void endInvocationInterlockARB(void);");
+
+    stageBuiltins[EShLangFragment].append(
+        "bool helperInvocationEXT();"
+        "\n");
 
 #ifdef AMD_EXTENSIONS
     // GL_AMD_shader_explicit_vertex_parameter
@@ -7748,14 +7753,6 @@ void TBuiltIns::initialize(const TBuiltInResource &resources, int version, EProf
         s.append(builtInConstant);
     }
 
-#ifdef AMD_EXTENSIONS
-    // GL_AMD_gcn_shader
-    if (profile != EEsProfile && version >= 450) {
-        snprintf(builtInConstant, maxSize, "const int gl_SIMDGroupSizeAMD = 64;");
-        s.append(builtInConstant);
-    }
-#endif
-
 #ifdef NV_EXTENSIONS
     // SPV_NV_mesh_shader
     if ((profile != EEsProfile && version >= 450) || (profile == EEsProfile && version >= 320)) {
@@ -7907,6 +7904,7 @@ void TBuiltIns::identifyBuiltIns(int version, EProfile profile, const SpvVersion
             }
         }
 
+
 #ifdef AMD_EXTENSIONS
         if (profile != EEsProfile) {
             symbolTable.setFunctionExtensions("minInvocationsAMD",                1, &E_GL_AMD_shader_ballot);
@@ -7941,6 +7939,9 @@ void TBuiltIns::identifyBuiltIns(int version, EProfile profile, const SpvVersion
         }
 
         if (profile != EEsProfile) {
+            symbolTable.setVariableExtensions("gl_SIMDGroupSizeAMD", 1, &E_GL_AMD_gcn_shader);
+            SpecialQualifier("gl_SIMDGroupSizeAMD", EvqVaryingIn, EbvSubGroupSize, symbolTable);
+
             symbolTable.setFunctionExtensions("cubeFaceIndexAMD", 1, &E_GL_AMD_gcn_shader);
             symbolTable.setFunctionExtensions("cubeFaceCoordAMD", 1, &E_GL_AMD_gcn_shader);
             symbolTable.setFunctionExtensions("timeAMD",          1, &E_GL_AMD_gcn_shader);
@@ -8641,6 +8642,8 @@ void TBuiltIns::identifyBuiltIns(int version, EProfile profile, const SpvVersion
             symbolTable.setVariableExtensions("gl_StorageSemanticsImage",   1, &E_GL_KHR_memory_scope_semantics);
             symbolTable.setVariableExtensions("gl_StorageSemanticsOutput",  1, &E_GL_KHR_memory_scope_semantics);
         }
+
+        symbolTable.setFunctionExtensions("helperInvocationEXT",            1, &E_GL_EXT_demote_to_helper_invocation);
         break;
 
     case EShLangCompute:
@@ -9294,6 +9297,8 @@ void TBuiltIns::identifyBuiltIns(int version, EProfile profile, const SpvVersion
     symbolTable.relateToOperator("bitCount",          EOpBitCount);
     symbolTable.relateToOperator("findLSB",           EOpFindLSB);
     symbolTable.relateToOperator("findMSB",           EOpFindMSB);
+
+    symbolTable.relateToOperator("helperInvocationEXT",  EOpIsHelperInvocation);
 
     if (PureOperatorBuiltins) {
         symbolTable.relateToOperator("imageSize",               EOpImageQuerySize);
