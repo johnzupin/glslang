@@ -1,4 +1,10 @@
-glslang (7.11.3214+39-1) UNRELEASED; urgency=medium
+glslang (7.11.3214+67-1lunarg16.04.1.1) xenial; urgency=medium
+
+  * New 1.1.114.0 SDK
+
+ -- John Zupin <john@odin>  Mon, 22 Jul 2019 19:41:30 -0600
+
+glslang (7.11.3214+39-1) unstable; urgency=medium
 
   * New 1.1.108.0~rc1 SDK
 
