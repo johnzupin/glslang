@@ -156,6 +156,7 @@ typedef enum {
     EShTargetSpv_1_2 = (1 << 16) | (2 << 8),
     EShTargetSpv_1_3 = (1 << 16) | (3 << 8),
     EShTargetSpv_1_4 = (1 << 16) | (4 << 8),
+    EShTargetSpv_1_5 = (1 << 16) | (5 << 8),
 } EShTargetLanguageVersion;
 
 struct TInputLanguage {
