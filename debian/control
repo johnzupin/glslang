@@ -1,8 +1,8 @@
 Source: glslang
 Section: libdevel
 Priority: optional
-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
-Uploaders: Timo Aaltonen <tjaalton@debian.org>
+Maintainer: John Zupin <johnz@lunarg.com>
+Uploaders: John Zupin <johnz@lunarg.com>
 Build-Depends: debhelper (>= 9),
  cmake,
  spirv-headers,
