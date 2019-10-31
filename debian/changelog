@@ -1,3 +1,9 @@
+glslang (7.12.3352+141-1ubuntu16.04.1.1) xenial; urgency=medium
+
+  * Automated package build
+
+ -- John Zupin <john@odin>  Tue, 29 Oct 2019 15:45:37 -0600
+
 glslang (7.12.3352+52-1lunarg16.04.1.1) xenial; urgency=medium
 
   * New 1.1.121.0 SDK
