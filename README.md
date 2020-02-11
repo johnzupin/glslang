@@ -3,6 +3,48 @@ Private version of glslang for Khronos-internal development.
 MRs to add functionality must be accompanied by simple regression tests, which are supplied with the gtests framework.
 See instructions below.
 
+There are several components:
+
+1. A GLSL/ESSL front-end for reference validation and translation of GLSL/ESSL into an AST.
+
+2. An HLSL front-end for translation of a broad generic HLL into the AST. See [issue 362](https://github.com/KhronosGroup/glslang/issues/362) and [issue 701](https://github.com/KhronosGroup/glslang/issues/701) for current status.
+
+3. A SPIR-V back end for translating the AST to SPIR-V.
+
+4. A standalone wrapper, `glslangValidator`, that can be used as a command-line tool for the above.
+
+How to add a feature protected by a version/extension/stage/profile:  See the
+comment in `glslang/MachineIndependent/Versions.cpp`.
+
+Tasks waiting to be done are documented as GitHub issues.
+
+Deprecations
+------------
+
+1. GLSLang, when installed through CMake, will install a `SPIRV` folder into
+`${CMAKE_INSTALL_INCLUDEDIR}`. This `SPIRV` folder is being moved to
+`glslang/SPIRV`. During the transition the `SPIRV` folder will be installed into
+both locations. The old install of `SPIRV/` will be removed as a CMake install
+target no sooner than May 1, 2020. See issue #1964.
+
+Execution of Standalone Wrapper
+-------------------------------
+
+To use the standalone binary form, execute `glslangValidator`, and it will print
+a usage statement.  Basic operation is to give it a file containing a shader,
+and it will print out warnings/errors and optionally an AST.
+
+The applied stage-specific rules are based on the file extension:
+* `.vert` for a vertex shader
+* `.tesc` for a tessellation control shader
+* `.tese` for a tessellation evaluation shader
+* `.geom` for a geometry shader
+* `.frag` for a fragment shader
+* `.comp` for a compute shader
+
+There is also a non-shader extension
+* `.conf` for a configuration file of limits, see usage statement for example
+
 Building
 --------
 
@@ -51,8 +93,8 @@ cd ../..
 ```
 
 If you wish to assure that SPIR-V generated from HLSL is legal for Vulkan,
-or wish to invoke -Os to reduce SPIR-V size from HLSL or GLSL, install
-spirv-tools with this:
+wish to invoke -Os to reduce SPIR-V size from HLSL or GLSL, or wish to run the
+integrated test suite, install spirv-tools with this:
 
 ```bash
 ./update_glslang_sources.py --site gitlab
@@ -123,25 +165,30 @@ when executed from the glslang subdirectory of the glslang repository.
 With no arguments it builds the full grammar, and with a "web" argument,
 the web grammar subset (see more about the web subset in the next section).
 
-### WASM for the the Web
+### Building to WASM for the Web and Node
 
-Use the steps in [Build Steps](#build-steps), which following notes/exceptions:
+Use the steps in [Build Steps](#build-steps), with the following notes/exceptions:
 * For building the web subset of core glslang:
-  + `m4` also needs a `-DGLSLANG_WEB` argument, or simply execute `updateGrammar web` from the glslang subdirectory
-  + turn off the CMAKE options for `BUILD_TESTING`, `ENABLE_OPT`, and `INSTALL_GTEST`,
-    while turning on `ENABLE_GLSLANG_WEB`
+  + execute `updateGrammar web` from the glslang subdirectory
+    (or if using your own scripts, `m4` needs a `-DGLSLANG_WEB` argument)
+  + set `-DENABLE_HLSL=OFF -DBUILD_TESTING=OFF -DENABLE_OPT=OFF -DINSTALL_GTEST=OFF`
+  + turn on `-DENABLE_GLSLANG_JS=ON`
+  + optionally, for a minimum-size binary, turn on `-DENABLE_GLSLANG_WEBMIN=ON`
+  + optionally, for GLSL compilation error messages, turn on `-DENABLE_GLSLANG_WEB_DEVEL=ON`
 * `emsdk` needs to be present in your executable search path, *PATH* for
-  Bash-like enivironments
-  + Instructions located
-    [here](https://emscripten.org/docs/getting_started/downloads.html#sdk-download-and-install)
-* Do not checkout SPIRV-Tools into `External`
-  + Does not work correctly with emscripten out of the box and we don't want it
-    in the build anyway. *TBD* Have build ignore SPIRV-Tools for web build
-* Wrap call to `cmake` using `emconfigure` with ENABLE_GLSLANG_WEB=ON:
-  + e.g. For Linux, `emconfigure cmake -DCMAKE_BUILD_TYPE=Release
-    -DENABLE_GLSLANG_WEB=ON -DCMAKE_INSTALL_PREFIX="$(pwd)/install" ..`
-* To get a 'true' minimized build, make sure to use `brotli` to compress the .js
+  Bash-like environments
+  + [Instructions located
+    here](https://emscripten.org/docs/getting_started/downloads.html#sdk-download-and-install)
+* Wrap cmake call: `emcmake cmake`
+* To get a fully minimized build, make sure to use `brotli` to compress the .js
   and .wasm files
+
+Example:
+
+```sh
+emcmake cmake -DCMAKE_BUILD_TYPE=Release -DENABLE_GLSLANG_WEB=ON \
+    -DENABLE_HLSL=OFF -DBUILD_TESTING=OFF -DENABLE_OPT=OFF -DINSTALL_GTEST=OFF ..
+```
 
 Testing
 -------
@@ -179,6 +226,11 @@ Running `runtests` script-backed tests:
 ```bash
 cd $SOURCE_DIR/Test && ./runtests
 ```
+
+If some tests fail with validation errors, there may be a mismatch between the
+version of `spirv-val` on the system and the version of glslang.  In this
+case, it is necessary to run `update_glslang_sources.py`.  See "Check-Out
+External Projects" above for more details.
 
 ### Contributing tests
 
@@ -248,7 +300,7 @@ class TProgram
     Reflection queries
 ```
 
-For just validating (not generating code), subsitute these calls:
+For just validating (not generating code), substitute these calls:
 
 ```cxx
     setEnvInput(EShSourceHlsl or EShSourceGlsl, stage,  EShClientNone, 0);
@@ -260,13 +312,13 @@ See `ShaderLang.h` and the usage of it in `StandAlone/StandAlone.cpp` for more
 details. There is a block comment giving more detail above the calls for
 `setEnvInput, setEnvClient, and setEnvTarget`.
 
-### C Functional Interface (orignal)
+### C Functional Interface (original)
 
 This interface is in roughly the first 2/3 of `ShaderLang.h`, and referred to
 as the `Sh*()` interface, as all the entry points start `Sh`.
 
 The `Sh*()` interface takes a "compiler" call-back object, which it calls after
-building call back that is passed the AST and can then execute a backend on it.
+building call back that is passed the AST and can then execute a back end on it.
 
 The following is a simplified resulting run-time call stack:
 
@@ -293,7 +345,7 @@ Basic Internal Operation
 * The intermediate representation is very high-level, and represented
   as an in-memory tree.   This serves to lose no information from the
   original program, and to have efficient transfer of the result from
-  parsing to the back-end.  In the AST, constants are propogated and
+  parsing to the back-end.  In the AST, constants are propagated and
   folded, and a very small amount of dead code is eliminated.
 
   To aid linking and reflection, the last top-level branch in the AST
