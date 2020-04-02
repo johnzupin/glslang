@@ -1,3 +1,9 @@
+glslang (8.13.3559+168-1ubuntu16.04.1.1) xenial; urgency=medium
+
+  * Automated package build
+
+ -- John Zupin <john@odin>  Wed, 01 Apr 2020 15:38:45 -0600
+
 glslang (8.13.3559+16-1ubuntu16.04.1.1) xenial; urgency=medium
 
   * Automated package build
