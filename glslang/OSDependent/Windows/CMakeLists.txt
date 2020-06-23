@@ -64,5 +64,5 @@ if(ENABLE_GLSLANG_INSTALL)
 
         add_library(OSDependent ALIAS glslang::OSDependent)
     ")
-    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/OSDependentTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
+    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/OSDependentTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/glslang)
 endif()
