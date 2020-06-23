@@ -100,7 +100,8 @@ if(ENABLE_GLSLANG_INSTALL)
 
         add_library(glslang-standalone ALIAS glslang::glslang-standalone)
     ")
-    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/glslang-standaloneTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
+
+    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/glslang-standaloneTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/glslang)
 
     # Create a symbolic link to glslang named glslangValidator for backwards compatibility
     set(legacy_glslang_name "glslangValidator${CMAKE_EXECUTABLE_SUFFIX}")
@@ -131,7 +132,7 @@ if(ENABLE_GLSLANG_INSTALL)
 
             add_library(spirv-remap ALIAS glslang::spirv-remap)
         ")
-        install(FILES "${CMAKE_CURRENT_BINARY_DIR}/spirv-remapTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
+        install(FILES "${CMAKE_CURRENT_BINARY_DIR}/spirv-remapTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/glslang)
     endif()
 
 endif()
