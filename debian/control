@@ -1,0 +1,21 @@
+Source: glslang
+Section: graphics
+Priority: optional
+Maintainer: John Zupin <johnz@lunarg.com>
+Build-Depends: debhelper (>= 10),
+ cmake,
+ python3
+Standards-Version: 4.1.2
+Homepage: https://github.com/KhronosGroup/glslang
+Vcs-Git: https://github.com/KhronosGroup/glslang
+Vcs-Browser: https://github.com/KhronosGroup/glslang
+
+Package: glslang
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: OpenGL and OpenGL ES shader front end and validator -- tools
+ glslang is the official reference compiler front end for the OpenGL ES
+ and OpenGL shading languages. It implements a strict
+ interpretation of the specifications for these languages.
+ .
+ This package includes the validator tools.
