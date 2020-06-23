@@ -116,7 +116,7 @@ if(ENABLE_GLSLANG_INSTALL)
 
         add_library(glslangValidator ALIAS glslang::glslangValidator)
     ")
-    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/glslangValidatorTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
+    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/glslangValidatorTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/glslang)
 
     if(ENABLE_SPVREMAPPER)
         install(TARGETS spirv-remap EXPORT glslang-targets)
@@ -131,7 +131,7 @@ if(ENABLE_GLSLANG_INSTALL)
 
             add_library(spirv-remap ALIAS glslang::spirv-remap)
         ")
-        install(FILES "${CMAKE_CURRENT_BINARY_DIR}/spirv-remapTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
+        install(FILES "${CMAKE_CURRENT_BINARY_DIR}/spirv-remapTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/glslang)
     endif()
 
     install(TARGETS glslang-default-resource-limits EXPORT glslang-targets)
@@ -146,6 +146,6 @@ if(ENABLE_GLSLANG_INSTALL)
 
         add_library(glslang-default-resource-limits ALIAS glslang::glslang-default-resource-limits)
     ")
-    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/glslang-default-resource-limitsTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
+    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/glslang-default-resource-limitsTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/glslang)
 
 endif()
