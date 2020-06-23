@@ -54,6 +54,6 @@ if(ENABLE_GLSLANG_INSTALL)
 
         add_library(OGLCompiler ALIAS glslang::OGLCompiler)
     ")
-    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/OGLCompilerTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
+    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/OGLCompilerTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/glslang)
 
 endif(ENABLE_GLSLANG_INSTALL)
