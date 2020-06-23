@@ -57,5 +57,5 @@ if(ENABLE_GLSLANG_INSTALL)
 
         add_library(HLSL ALIAS glslang::HLSL)
     ")
-    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/HLSLTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
+    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/HLSLTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/glslang)
 endif()
