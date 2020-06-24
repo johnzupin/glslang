@@ -249,7 +249,7 @@ if(ENABLE_GLSLANG_INSTALL)
                 add_library(GenericCodeGen ALIAS glslang::GenericCodeGen)
             endif()
         ")
-        install(FILES "${CMAKE_CURRENT_BINARY_DIR}/glslangTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
+        install(FILES "${CMAKE_CURRENT_BINARY_DIR}/glslangTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/glslang)
     endif()
 
     set(PUBLIC_HEADERS
