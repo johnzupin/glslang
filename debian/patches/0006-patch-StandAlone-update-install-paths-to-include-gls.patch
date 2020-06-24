@@ -1,0 +1,34 @@
+From: John Zupin <johnz@lunarg.com>
+Date: Tue, 23 Jun 2020 16:28:21 -0600
+Subject: patch: StandAlone update install paths to include glslang
+
+---
+ StandAlone/CMakeLists.txt | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/StandAlone/CMakeLists.txt b/StandAlone/CMakeLists.txt
+index 591ac34..1897f2a 100644
+--- a/StandAlone/CMakeLists.txt
++++ b/StandAlone/CMakeLists.txt
+@@ -52,17 +52,17 @@ endif(WIN32)
+ if(ENABLE_GLSLANG_INSTALL)
+     install(TARGETS glslangValidator EXPORT glslangValidatorTargets
+             RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+-    install(EXPORT glslangValidatorTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
++    install(EXPORT glslangValidatorTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/glslang/cmake)
+ 
+     if(ENABLE_SPVREMAPPER)
+         install(TARGETS spirv-remap EXPORT spirv-remapTargets
+             RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+-        install(EXPORT spirv-remapTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
++        install(EXPORT spirv-remapTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/glslang/cmake)
+     endif()
+ 
+     if(BUILD_SHARED_LIBS)
+         install(TARGETS glslang-default-resource-limits EXPORT glslang-default-resource-limitsTargets
+-                LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
+-        install(EXPORT glslang-default-resource-limitsTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
++                LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/glslang)
++        install(EXPORT glslang-default-resource-limitsTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/glslang/cmake)
+     endif()
+ endif(ENABLE_GLSLANG_INSTALL)

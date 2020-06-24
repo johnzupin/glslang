@@ -1,0 +1,6 @@
+0001-patch-hlsl-prepend-glslang-to-install-dir.patch
+0002-patch-OGLCompilersDLL-add-glslang-to-install-path.patch
+0003-patch-OSDependent-add-glslang-path-to-install-dir.patch
+0004-patch-OSDependent-unix-add-glslang-path-to-install-d.patch
+0005-patch-SPIRV-add-glslang-to-install-dirs.patch
+0006-patch-StandAlone-update-install-paths-to-include-gls.patch

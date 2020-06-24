@@ -1,0 +1,21 @@
+From: John Zupin <johnz@lunarg.com>
+Date: Tue, 23 Jun 2020 16:06:59 -0600
+Subject: patch: OSDependent/unix add glslang path to install dir
+
+---
+ glslang/OSDependent/Unix/CMakeLists.txt | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/glslang/OSDependent/Unix/CMakeLists.txt b/glslang/OSDependent/Unix/CMakeLists.txt
+index 9994314..73c2356 100644
+--- a/glslang/OSDependent/Unix/CMakeLists.txt
++++ b/glslang/OSDependent/Unix/CMakeLists.txt
+@@ -21,6 +21,6 @@ endif()
+ 
+ if(ENABLE_GLSLANG_INSTALL)
+     install(TARGETS OSDependent EXPORT OSDependentTargets
+-            ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
+-	install(EXPORT OSDependentTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
++            ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}/glslang)
++	install(EXPORT OSDependentTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/glslang/cmake)
+ endif(ENABLE_GLSLANG_INSTALL)
