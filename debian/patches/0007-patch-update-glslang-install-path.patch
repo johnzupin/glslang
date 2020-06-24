@@ -1,0 +1,32 @@
+From: John Zupin <johnz@lunarg.com>
+Date: Wed, 24 Jun 2020 10:13:21 -0600
+Subject: patch: update glslang install path
+
+---
+ glslang/CMakeLists.txt | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/glslang/CMakeLists.txt b/glslang/CMakeLists.txt
+index a0259a3..53d8956 100644
+--- a/glslang/CMakeLists.txt
++++ b/glslang/CMakeLists.txt
+@@ -109,14 +109,14 @@ endif(WIN32)
+ if(ENABLE_GLSLANG_INSTALL)
+     if(BUILD_SHARED_LIBS)
+         install(TARGETS glslang EXPORT glslangTargets
+-                ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+-                LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+-                RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
++                ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}/glslang
++                LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/glslang
++                RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}/glslang)
+     else()
+         install(TARGETS glslang EXPORT glslangTargets
+-                ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
++                ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}/glslang)
+     endif()
+-    install(EXPORT glslangTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
++    install(EXPORT glslangTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/glslang/cmake)
+ endif(ENABLE_GLSLANG_INSTALL)
+ 
+ if(ENABLE_GLSLANG_INSTALL)

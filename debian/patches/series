@@ -4,3 +4,4 @@
 0004-patch-OSDependent-unix-add-glslang-path-to-install-d.patch
 0005-patch-SPIRV-add-glslang-to-install-dirs.patch
 0006-patch-StandAlone-update-install-paths-to-include-gls.patch
+0007-patch-update-glslang-install-path.patch
