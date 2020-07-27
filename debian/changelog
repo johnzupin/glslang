@@ -1,3 +1,240 @@
+glslang (8.13.3743+193-1lunarg18.04-1) bionic; urgency=medium
+
+  [ nihui ]
+  * fix warning unused parameter in release build (#2251)
+
+  [ alelenv ]
+  * EXT_ray_tracing requires spv1.4 (#2237)
+
+  [ dan sinclair ]
+  * Remove install to the SPIRV/ folder. (#2256)
+
+  [ John Kessenich ]
+  * Update news for header location change and recommendation.
+
+  [ alelenv ]
+  * Add default descriptorset decoration for acceleration structure (#2257)
+
+  [ rdb ]
+  * HLSL: fix handling of uniform qualifier in entry point parameters (#2254)
+  * HLSL: Recognize POSITION semantic et al in DX9 compatibility mode (#2255)
+  * HLSL: Add better diagnostic when using in/out qualifiers in global scope (#2258)
+
+  [ Ricardo Garcia ]
+  * Add SPIR-V capabilities needed for spec constants (#2199)
+
+  [ Alejandro Piñeiro ]
+  * spirv: Support initializers on uniforms (#1588)
+
+  [ Chow ]
+  * Add Shared/Std140 SSBO process & top-level array elements related (#2231)
+
+  [ Roy.li ]
+  * Fix xfb stride limit issue (#2088)
+
+  [ Ryan Harrison ]
+  * Use correct type for var storing returned value (#2263)
+
+  [ John Kessenich ]
+  * Fix #2264: OpEntryPoint incorrectly including function parameters.
+  * Bump code gen version, due to removal of OpEntryPoint operands.
+
+  [ Ben Clayton ]
+  * Fix signed / unsigned mismatch warning (#2266)
+  * C Interface: Split SPIR-V C interface to own file
+
+  [ rdb ]
+  * HLSL: Fix incorrect case in name of DX9-style cube sampler type (#2265)
+
+  [ John Kessenich ]
+  * HLSL: Remove support for having GLSL versions of HLSL intrinsics.
+
+  [ Ryan Harrison ]
+  * Remove unused function, BaseTypeName (#2272)
+
+  [ dan sinclair ]
+  * Remove unused variable. (#2273)
+
+  [ Ben Clayton ]
+  * CMake: Fold HLSL source into glslang
+
+  [ John Kessenich ]
+  * Bump version.
+
+  [ Ben Clayton ]
+  * Move hlsl/ source to glslang/HLSL/
+
+  [ John Kessenich ]
+  * Bump version numbers.
+  * Build: use better MSVC subfolder names for the previous build changes.
+
+  [ Shahbaz Youssefi ]
+  * Add -g0 command line argument
+
+  [ Ben Clayton ]
+  * Switch ndk_test from gnustl_static to c++_static
+  * Add kokoro configs for android-ndk and cmake
+
+  [ John Kessenich ]
+  * Update README.md
+
+  [ Graeme Leese ]
+  * Use OpFUnordNotEqual for floating-point !=
+  * Update test results to expect OpFUnordNotEqual
+  * Update SPIR-V generator version
+  * Update test expected files with new magic number
+
+  [ Evgeny Proydakov ]
+  * Fixed msvc 2019 nmake compiler warnings with RTTI. By default cmake generates cxx_flags with `/GR` parameter. I updated CMAKE_CXX_FLAGS string and replaced `/GR` -> `/GR-`
+
+  [ John Zupin ]
+  * package: create glslang-dev package
+
+  [ Ben Clayton ]
+  * Kokoro: Split linux cmake cfgs into static/shared
+
+  [ John Zupin ]
+  * patch: first commit for fixing install paths
+  * patch: updated glslang install path
+
+  [ lriki ]
+  * HLSL: Fix #pragma pack_matrix(row_major) not work on global uniforms
+  * Add pack_matrix test
+
+  [ John Kessenich ]
+  * SPV: Partially address #2293: correct "const in" precision matching.
+  * SPV: Fix #2293: keep relaxed precision on arg passed to relaxed param
+
+  [ Ben Clayton ]
+  * Remove root kokoro/linux-*-cmake configs
+  * CMake: Error on unresolved symbols
+  * CMake: Compile with -fPIC when building SOs
+
+  [ Evgeny Proydakov ]
+  * Fixed GCC -Wunused-parameter in hlslParseables.cpp.
+
+  [ John Kessenich ]
+  * SPV: RelaxedPrecision: Generalize fix #2293 to cover more operations.
+  * SPV: RelaxedPrecision: use the result precision for texture sampling.
+
+  [ Ben Clayton ]
+  * CMake: break up glslang into smaller static libs
+  * glslang: Only export public interface for SOs
+
+  [ John Kessenich ]
+  * HLSL: Catch error cases earlier, preventing a later assert.
+
+  [ Ben Clayton ]
+  * Add additional licenses in use to LICENSE.txt
+
+  [ John Kessenich ]
+  * Tests: More broadly use automapping binding/location.
+  * SPIRV-Tools and tests: Update to location-validation in SPIRV-Tools.
+  * Bump revision.
+
+  [ Ben Clayton ]
+  * Add missing copyright headers
+  * Fix GLSLANG_IS_SHARED_LIBRARY define
+  * Add config for license-checker and Kokoro scripts.
+  * Kokoro: Correct the `build_file' path to build.sh
+  * License headers: s/Google/The Khronos Group
+  * Don't use add_link_options() on old CMake versions
+
+  [ Shahbaz Youssefi ]
+  * gn: Optionally disable optimizations and HLSL
+
+  [ Ben Clayton ]
+  * Add GLSLANG_BUILD_PIC CMake flag
+
+  [ Shahbaz Youssefi ]
+  * gn: Fix `gn gen --check` by adding missing dependency
+  * gn: Fix dawn tests in Chromium
+
+  [ Marcin Ślusarz ]
+  * Add --quiet option.
+
+  [ Ben Clayton ]
+  * Add new rules to .gitignore
+  * Add new static targets to VS solution folders
+  * Remove GLSLANG_BUILD_PIC flag
+  * Use CMake's builtin functionality for PCHs
+
+  [ Ryan Harrison ]
+  * Make sure glslang_angle has a definition in BUILD.gn
+
+  [ Shahbaz Youssefi ]
+  * Use GLSLANG_ANGLE to strip features to what ANGLE requires
+  * Customize glslang.y to GLSLANG_ANGLE
+
+  [ Ben Clayton ]
+  * Generate build information from CHANGES.md
+  * Attempt to fix chromium builds
+  * Fix CMake rules when nesting CMake projects
+
+  [ Christopher Degawa ]
+  * Common: include standard headers before doing any defines
+
+  [ Ben Clayton ]
+  * Add missing comma from license-checker.cfg
+
+  [ John Kessenich ]
+  * Fix #2329: don't use invalid initializers.
+  * Fix a couple lines that were too long, to retrigger bots.
+  * Revert "Merge pull request #2330 from ShabbyX/optimize_for_angle"
+  * Fix comma in licence checker.
+
+  [ Ben Clayton ]
+  * Kokoro: Print test output to stdout
+  * CMake: Move project() to top of CMakeLists.txt
+  * Add bison license to LICENSE.txt
+
+  [ John Kessenich ]
+  * Non-determinism: Remove test file that seems to trigger non-determinism.
+  * Fix recently found non-determinism with gl_WorldToObject3x4EXT.
+
+  [ Ben Clayton ]
+  * Give build_info.py the executable bit
+  * runtests: Check error codes, set LD_LIBRARY_PATH
+
+  [ John Kessenich ]
+  * GLSL/SPV: Propagaet precision qualifier from function to return value.
+
+  [ Ben Clayton ]
+  * Add new rules for update of license-checker
+  * Update license-checker.cfg with simplified rules
+  * build_info: Fix parsing of versions with no flavor
+  * Finalize glslang 10.15.3847
+  * Start glslang 11.0.0
+  * Drop support for VS2013
+
+  [ Malcolm Bechard ]
+  * also search global variables assignment for live variables
+
+  [ Ben Clayton ]
+  * Simplify PoolAlloc with use of thread_local.
+  * Deprecate InitializeDll functions
+
+  [ johnkslang ]
+  * SPV: Update to the latest SPIR-V headers.
+
+  [ Ben Clayton ]
+  * Limit visibility of symbols for internal libraries
+
+  [ Vikram Kushwaha ]
+  * Add changes for SPV_EXT_shader_atomic_float_add
+
+  [ John Zupin ]
+  * copyright: updated for release
+
+  [ Greg Fischer ]
+  * Update spirv-tools known-good to most recent stable
+
+  [ John Zupin ]
+  * copyright: updated for lunarg debian files
+  * patches: updated for new package release
+
+ -- John Zupin <john@odin>  Mon, 27 Jul 2020 15:19:50 -0600
+
 glslang (8.13.3743+37-1) bionic; urgency=medium
 
   * Initial release
