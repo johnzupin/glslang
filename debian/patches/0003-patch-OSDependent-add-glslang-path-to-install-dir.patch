@@ -7,10 +7,10 @@ Subject: patch: OSDependent add glslang path to install dir
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/glslang/OSDependent/Windows/CMakeLists.txt b/glslang/OSDependent/Windows/CMakeLists.txt
-index c050ef6..1426b94 100644
+index 9cf1b7f..396260a 100644
 --- a/glslang/OSDependent/Windows/CMakeLists.txt
 +++ b/glslang/OSDependent/Windows/CMakeLists.txt
-@@ -16,6 +16,6 @@ endif(WIN32)
+@@ -49,6 +49,6 @@ endif(WIN32)
  
  if(ENABLE_GLSLANG_INSTALL)
      install(TARGETS OSDependent EXPORT OSDependentTargets

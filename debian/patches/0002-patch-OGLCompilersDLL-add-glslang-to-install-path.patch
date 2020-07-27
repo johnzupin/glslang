@@ -7,10 +7,10 @@ Subject: patch: OGLCompilersDLL add glslang to install path
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/OGLCompilersDLL/CMakeLists.txt b/OGLCompilersDLL/CMakeLists.txt
-index e009674..fec8288 100644
+index 246b4e7..f3820c3 100644
 --- a/OGLCompilersDLL/CMakeLists.txt
 +++ b/OGLCompilersDLL/CMakeLists.txt
-@@ -10,6 +10,6 @@ endif(WIN32)
+@@ -44,6 +44,6 @@ endif(WIN32)
  
  if(ENABLE_GLSLANG_INSTALL)
      install(TARGETS OGLCompiler EXPORT OGLCompilerTargets

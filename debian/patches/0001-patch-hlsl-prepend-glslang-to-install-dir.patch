@@ -7,10 +7,10 @@ Subject: patch: hlsl prepend glslang to install dir
  1 file changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/hlsl/CMakeLists.txt b/hlsl/CMakeLists.txt
-index ae0d4d4..4658472 100644
+index 62faa19..6cd1bcc 100644
 --- a/hlsl/CMakeLists.txt
 +++ b/hlsl/CMakeLists.txt
-@@ -34,12 +34,12 @@ endif(WIN32)
+@@ -48,12 +48,12 @@ endif()
  if(ENABLE_GLSLANG_INSTALL)
      if(BUILD_SHARED_LIBS)
          install(TARGETS HLSL EXPORT HLSLTargets

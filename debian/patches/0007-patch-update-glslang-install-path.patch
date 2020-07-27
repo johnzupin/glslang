@@ -7,13 +7,13 @@ Subject: patch: update glslang install path
  1 file changed, 5 insertions(+), 5 deletions(-)
 
 diff --git a/glslang/CMakeLists.txt b/glslang/CMakeLists.txt
-index a0259a3..53d8956 100644
+index 14249bf..2801721 100644
 --- a/glslang/CMakeLists.txt
 +++ b/glslang/CMakeLists.txt
-@@ -109,14 +109,14 @@ endif(WIN32)
- if(ENABLE_GLSLANG_INSTALL)
+@@ -203,16 +203,16 @@ if(ENABLE_GLSLANG_INSTALL)
      if(BUILD_SHARED_LIBS)
-         install(TARGETS glslang EXPORT glslangTargets
+         install(TARGETS glslang
+                 EXPORT  glslangTargets
 -                ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
 -                LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
 -                RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
@@ -21,12 +21,14 @@ index a0259a3..53d8956 100644
 +                LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/glslang
 +                RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}/glslang)
      else()
-         install(TARGETS glslang EXPORT glslangTargets
+         install(TARGETS glslang MachineIndependent GenericCodeGen
+                 EXPORT  glslangTargets
 -                ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
 +                ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}/glslang)
      endif()
+ 
 -    install(EXPORT glslangTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
 +    install(EXPORT glslangTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/glslang/cmake)
- endif(ENABLE_GLSLANG_INSTALL)
  
- if(ENABLE_GLSLANG_INSTALL)
+     set(ALL_HEADERS
+         ${GLSLANG_HEADERS}

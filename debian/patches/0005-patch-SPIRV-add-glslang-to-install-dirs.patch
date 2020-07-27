@@ -3,14 +3,14 @@ Date: Tue, 23 Jun 2020 16:13:59 -0600
 Subject: patch: SPIRV add glslang to install dirs
 
 ---
- SPIRV/CMakeLists.txt | 19 +++++++++----------
- 1 file changed, 9 insertions(+), 10 deletions(-)
+ SPIRV/CMakeLists.txt | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
 
 diff --git a/SPIRV/CMakeLists.txt b/SPIRV/CMakeLists.txt
-index 9040609..de6d4d5 100644
+index 53ada4f..59b1ca8 100644
 --- a/SPIRV/CMakeLists.txt
 +++ b/SPIRV/CMakeLists.txt
-@@ -76,28 +76,27 @@ if(ENABLE_GLSLANG_INSTALL)
+@@ -111,27 +111,27 @@ if(ENABLE_GLSLANG_INSTALL)
      if(BUILD_SHARED_LIBS)
          if (ENABLE_SPVREMAPPER)
              install(TARGETS SPVRemapper EXPORT SPVRemapperTargets
@@ -45,6 +45,5 @@ index 9040609..de6d4d5 100644
 -    install(EXPORT SPIRVTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
 +    install(EXPORT SPIRVTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/glslang/cmake)
  
--    install(FILES ${HEADERS} ${SPVREMAP_HEADERS} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/SPIRV/)
      install(FILES ${HEADERS} ${SPVREMAP_HEADERS} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/glslang/SPIRV/)
  endif(ENABLE_GLSLANG_INSTALL)

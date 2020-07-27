@@ -7,10 +7,10 @@ Subject: patch: StandAlone update install paths to include glslang
  1 file changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/StandAlone/CMakeLists.txt b/StandAlone/CMakeLists.txt
-index 591ac34..1897f2a 100644
+index 8038c04..ed54989 100644
 --- a/StandAlone/CMakeLists.txt
 +++ b/StandAlone/CMakeLists.txt
-@@ -52,17 +52,17 @@ endif(WIN32)
+@@ -85,17 +85,17 @@ endif(WIN32)
  if(ENABLE_GLSLANG_INSTALL)
      install(TARGETS glslangValidator EXPORT glslangValidatorTargets
              RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
