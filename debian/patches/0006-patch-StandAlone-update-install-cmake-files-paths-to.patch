@@ -1,13 +1,14 @@
 From: John Zupin <johnz@lunarg.com>
 Date: Tue, 23 Jun 2020 16:28:21 -0600
-Subject: patch: StandAlone update install paths to include glslang
+Subject: patch: StandAlone update install cmake files paths to include
+ glslang
 
 ---
- StandAlone/CMakeLists.txt | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ StandAlone/CMakeLists.txt | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/StandAlone/CMakeLists.txt b/StandAlone/CMakeLists.txt
-index 8038c04..ed54989 100644
+index 8038c04..abd7e87 100644
 --- a/StandAlone/CMakeLists.txt
 +++ b/StandAlone/CMakeLists.txt
 @@ -85,17 +85,17 @@ endif(WIN32)
@@ -26,9 +27,8 @@ index 8038c04..ed54989 100644
  
      if(BUILD_SHARED_LIBS)
          install(TARGETS glslang-default-resource-limits EXPORT glslang-default-resource-limitsTargets
--                LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
+                 LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
 -        install(EXPORT glslang-default-resource-limitsTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
-+                LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/glslang)
 +        install(EXPORT glslang-default-resource-limitsTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/glslang/cmake)
      endif()
  endif(ENABLE_GLSLANG_INSTALL)
