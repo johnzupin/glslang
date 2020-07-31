@@ -55,5 +55,5 @@ if(ENABLE_GLSLANG_INSTALL)
         install(TARGETS HLSL EXPORT HLSLTargets
                 ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
     endif()
-	install(EXPORT HLSLTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
+	install(EXPORT HLSLTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/glslang)
 endif()
