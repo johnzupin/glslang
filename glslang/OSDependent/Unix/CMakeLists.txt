@@ -55,5 +55,5 @@ endif()
 if(ENABLE_GLSLANG_INSTALL)
     install(TARGETS OSDependent EXPORT OSDependentTargets
             ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
-	install(EXPORT OSDependentTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
+	install(EXPORT OSDependentTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/glslang)
 endif()
