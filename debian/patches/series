@@ -1,7 +1,0 @@
-0001-patch-hlsl-prepend-glslang-to-cmake-files-install-di.patch
-0002-patch-OGLCompilersDLL-add-glslang-to-cmake-files-ins.patch
-0003-patch-OSDependent-add-glslang-path-to-cmake-files-in.patch
-0004-patch-OSDependent-unix-add-glslang-path-to-cmake-fil.patch
-0005-patch-SPIRV-add-glslang-to-cmake-files-install-dirs.patch
-0006-patch-StandAlone-update-cmake-files-install-paths-to.patch
-0007-patch-update-cmake-files-glslang-install-path.patch
