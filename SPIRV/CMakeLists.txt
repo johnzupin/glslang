@@ -129,10 +129,10 @@ if(ENABLE_GLSLANG_INSTALL)
     endif()
 
     if (ENABLE_SPVREMAPPER)
-        install(EXPORT SPVRemapperTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
+        install(EXPORT SPVRemapperTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/glslang)
     endif()
 
-    install(EXPORT SPIRVTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
+    install(EXPORT SPIRVTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/glslang)
 
     install(FILES ${HEADERS} ${SPVREMAP_HEADERS} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/glslang/SPIRV/)
 endif()
