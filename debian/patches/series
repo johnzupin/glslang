@@ -1,0 +1,6 @@
+0001-patch-StandAlone-cmake-install-location-to-cmake-gls.patch
+0002-patch-HLSL-cmake-install-location-to-cmake-glslang.patch
+0003-patch-SPIRV-cmake-install-location-to-cmake-glslang.patch
+0004-patch-OGLCompilersDLL-cmake-install-location-to-cmak.patch
+0005-patch-glslang-cmake-install-location-to-cmake-glslan.patch
+0006-patch-glslang-OSDependent-Unix-cmake-install-locatio.patch
