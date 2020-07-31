@@ -1,0 +1,34 @@
+From: John Zupin <johnz@lunarg.com>
+Date: Wed, 24 Jun 2020 10:13:21 -0600
+Subject: patch: update cmake files glslang install path
+
+---
+ glslang/CMakeLists.txt | 9 +++------
+ 1 file changed, 3 insertions(+), 6 deletions(-)
+
+diff --git a/glslang/CMakeLists.txt b/glslang/CMakeLists.txt
+index 14249bf..7f217b4 100644
+--- a/glslang/CMakeLists.txt
++++ b/glslang/CMakeLists.txt
+@@ -201,18 +201,15 @@ endif(WIN32)
+ ################################################################################
+ if(ENABLE_GLSLANG_INSTALL)
+     if(BUILD_SHARED_LIBS)
+-        install(TARGETS glslang
+-                EXPORT  glslangTargets
++        install(TARGETS glslang EXPORT glslangTargets
+                 ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+                 LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+                 RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+     else()
+-        install(TARGETS glslang MachineIndependent GenericCodeGen
+-                EXPORT  glslangTargets
++        install(TARGETS glslang EXPORT glslangTargets
+                 ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
+     endif()
+-
+-    install(EXPORT glslangTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
++    install(EXPORT glslangTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/glslang/cmake)
+ 
+     set(ALL_HEADERS
+         ${GLSLANG_HEADERS}
