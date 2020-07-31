@@ -212,7 +212,7 @@ if(ENABLE_GLSLANG_INSTALL)
                 ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
     endif()
 
-    install(EXPORT glslangTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
+    install(EXPORT glslangTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/glslang)
 
     set(ALL_HEADERS
         ${GLSLANG_HEADERS}
