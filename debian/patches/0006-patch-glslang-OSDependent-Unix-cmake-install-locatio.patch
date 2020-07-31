@@ -1,0 +1,20 @@
+From: John Zupin <johnz@lunarg.com>
+Date: Fri, 31 Jul 2020 13:43:11 -0600
+Subject: patch: glslang/OSDependent/Unix cmake install location to
+ cmake/glslang
+
+---
+ glslang/OSDependent/Unix/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/glslang/OSDependent/Unix/CMakeLists.txt b/glslang/OSDependent/Unix/CMakeLists.txt
+index 354a3e9..4e3be59 100644
+--- a/glslang/OSDependent/Unix/CMakeLists.txt
++++ b/glslang/OSDependent/Unix/CMakeLists.txt
+@@ -55,5 +55,5 @@ endif()
+ if(ENABLE_GLSLANG_INSTALL)
+     install(TARGETS OSDependent EXPORT OSDependentTargets
+             ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
+-	install(EXPORT OSDependentTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
++	install(EXPORT OSDependentTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/glslang)
+ endif(ENABLE_GLSLANG_INSTALL)

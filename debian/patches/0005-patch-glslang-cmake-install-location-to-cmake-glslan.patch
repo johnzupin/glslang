@@ -1,0 +1,21 @@
+From: John Zupin <johnz@lunarg.com>
+Date: Fri, 31 Jul 2020 13:42:25 -0600
+Subject: patch: glslang cmake install location to cmake/glslang
+
+---
+ glslang/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/glslang/CMakeLists.txt b/glslang/CMakeLists.txt
+index 14249bf..e5b39e5 100644
+--- a/glslang/CMakeLists.txt
++++ b/glslang/CMakeLists.txt
+@@ -212,7 +212,7 @@ if(ENABLE_GLSLANG_INSTALL)
+                 ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
+     endif()
+ 
+-    install(EXPORT glslangTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
++    install(EXPORT glslangTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/glslang)
+ 
+     set(ALL_HEADERS
+         ${GLSLANG_HEADERS}
