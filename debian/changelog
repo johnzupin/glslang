@@ -1,3 +1,14 @@
+glslang (8.13.3743+193-1ubuntu20.04-2) focal; urgency=medium
+
+  * control: add newline at the end
+  * copyright: add newline at EOF
+  * debian: remove README.Debian
+  * patches: updated and exported for cmake install files only
+  * patches: removed
+  * patches: updated to fix cmake install locations
+
+ -- John Zupin <john@odin>  Fri, 31 Jul 2020 13:54:44 -0600
+
 glslang (8.13.3743+193-1lunarg20.04-1) focal; urgency=medium
 
   [ nihui ]
