@@ -7,10 +7,10 @@ Subject: patch: glslang cmake install location to cmake/glslang
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/glslang/CMakeLists.txt b/glslang/CMakeLists.txt
-index 14249bf..e5b39e5 100644
+index 1c7d22a..8e349b8 100644
 --- a/glslang/CMakeLists.txt
 +++ b/glslang/CMakeLists.txt
-@@ -212,7 +212,7 @@ if(ENABLE_GLSLANG_INSTALL)
+@@ -210,7 +210,7 @@ if(ENABLE_GLSLANG_INSTALL)
                  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
      endif()
  
