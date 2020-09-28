@@ -1,3 +1,92 @@
+glslang (8.13.3743+242-1lunarg18.04-1) bionic; urgency=medium
+
+  [ David Neto ]
+  * Avoid spurious warning about uninit var
+
+  [ Ben Clayton ]
+  * Revert changes that migrate to `thread_local`.
+
+  [ Shahbaz Youssefi ]
+  * Use GLSLANG_ANGLE to strip features to what ANGLE requires
+
+  [ johnkslang ]
+  * SPV: Fix #2363: include trailing newline named text SPV output.
+  * SPV: Use more correct SPV-Tools environment, partially addressing #2290
+  * SPV: Standalone; sanity check the client GLSL input semantics option value.
+  * Build/Test: Dropping 2013 allows using the latest googletests.
+  * SPV: Fix #1829: don't emit OpModuleProcessed use-storage-buffer
+  * Non-functional: consistently use 'const TSourceLoc&' to pass location.
+  * Non-functional: correctly do GL_EXT_buffer_reference2 semantic checking
+
+  [ Ez Diy ]
+  * GLSLANG_EXPORT for C APIs.
+
+  [ Alan Baker ]
+  * Update SPIRV-Tools and SPIRV-Headers known good
+  * Update test expectations
+
+  [ johnkslang ]
+  * Non-functional: spellings of "destinaton" and "addPairConversion"
+  * Non-functional: Remove reinventing the scalar type, note code issues
+  * Non-functional (almost): Refactor when 'extensionRequested' is called.
+  * Fix #2366, fix #2358, correctly separate out numerical feature checking
+
+  [ Rafael Marinheiro ]
+  * Use --test-root to pass files to Bazel tests.
+
+  [ johnkslang ]
+  * Build: fix a build warning
+
+  [ Julius Ikkala ]
+  * Obey ENABLE_PCH CMake option
+
+  [ johnkslang ]
+  * Revert "Merge pull request #2371 from RafaelMarinheiro/master"
+
+  [ Jamie Madill ]
+  * Suppress two override suggestion warnings.
+
+  [ Rex Xu ]
+  * Parser: Fix wrong names of extension macros
+
+  [ Tobias Hector ]
+  * Error when initializing rayQuery with assignment
+
+  [ Rex Xu ]
+  * SPIRV: Fix some disassembly issues
+
+  [ Tobias Hector ]
+  * Added missing copyright amendment
+
+  [ Shahbaz Youssefi ]
+  * Allow subpassLoad for ANGLE
+
+  [ nihui ]
+  * Try to find python interpreter from host first
+
+  [ johnkslang ]
+  * Fix #2385: guard against constant_id on non-const.
+
+  [ Chow ]
+  * Fix scope definition in ES 100. (#2379)
+
+  [ Rex Xu ]
+  * SPIRV: Add disassembly support for multiple literal strings (#2397)
+
+  [ Chow ]
+  * Preprocessor related issue fix (#2378)
+
+  [ Rex Xu ]
+  * SPIRV: Add more utility functions to build some opcodes (#2398)
+
+  [ greg-lunarg ]
+  * Update spirv-tools and spirv-headers known goods (#2401)
+
+  [ John Zupin ]
+  * packaging: updated patches
+
+ -- John Zupin <john@odin>  Mon, 28 Sep 2020 17:01:11 -0600
+
 glslang (8.13.3743+193-1ubuntu18.04-2) bionic; urgency=medium
 
   * control: add newline at the end
