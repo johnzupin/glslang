@@ -228,9 +228,15 @@ function(glslang_set_link_args TARGET)
     endif()
 endfunction(glslang_set_link_args)
 
+if(NOT COMMAND find_host_package)
+    macro(find_host_package)
+        find_package(${ARGN})
+    endmacro()
+endif()
+
 # CMake needs to find the right version of python, right from the beginning,
 # otherwise, it will find the wrong version and fail later
-find_package(PythonInterp 3 REQUIRED)
+find_host_package(PythonInterp 3 REQUIRED)
 
 # Root directory for build-time generated include files
 set(GLSLANG_GENERATED_INCLUDEDIR "${CMAKE_BINARY_DIR}/include")
@@ -279,23 +285,17 @@ function(glslang_add_build_info_dependency target)
     add_dependencies(${target} glslang-build-info)
 endfunction()
 
-# glslang_default_to_hidden_visibility() makes the symbol visibility hidden by
-# default for <target>.
-function(glslang_default_to_hidden_visibility target)
-    if(NOT WIN32)
-        target_compile_options(${target} PRIVATE "-fvisibility=hidden")
-    endif()
-endfunction()
-
 # glslang_only_export_explicit_symbols() makes the symbol visibility hidden by
-# default for <target>, and sets the GLSLANG_IS_SHARED_LIBRARY define, and 
-# GLSLANG_EXPORTING to 1 when specifically building <target>.
+# default for <target> when building shared libraries, and sets the
+# GLSLANG_IS_SHARED_LIBRARY define, and GLSLANG_EXPORTING to 1 when specifically
+# building <target>.
 function(glslang_only_export_explicit_symbols target)
-    glslang_default_to_hidden_visibility(${target})
     if(BUILD_SHARED_LIBS)
         target_compile_definitions(${target} PUBLIC "GLSLANG_IS_SHARED_LIBRARY=1")
         if(WIN32)
             target_compile_definitions(${target} PRIVATE "GLSLANG_EXPORTING=1")
+        else()
+            target_compile_options(${target} PRIVATE "-fvisibility=hidden")
         endif()
     endif()
 endfunction()
@@ -303,14 +303,16 @@ endfunction()
 # glslang_pch() adds precompiled header rules to <target> for the pre-compiled
 # header file <pch>. As target_precompile_headers() was added in CMake 3.16,
 # this is a no-op if called on earlier versions of CMake.
-if(NOT CMAKE_VERSION VERSION_LESS "3.16")
+if(NOT CMAKE_VERSION VERSION_LESS "3.16" AND ENABLE_PCH)
     function(glslang_pch target pch)
         target_precompile_headers(${target} PRIVATE ${pch})
     endfunction()
 else()
     function(glslang_pch target pch)
     endfunction()
-    message("Your CMake version is ${CMAKE_VERSION}. Update to at least 3.16 to enable precompiled headers to speed up incremental builds")
+    if(ENABLE_PCH)
+        message("Your CMake version is ${CMAKE_VERSION}. Update to at least 3.16 to enable precompiled headers to speed up incremental builds")
+    endif()
 endif()
 
 if(BUILD_EXTERNAL AND IS_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/External)
