@@ -1,3 +1,117 @@
+glslang (8.13.3743+289-1lunarg18.04-1) bionic; urgency=medium
+
+  [ Bas Nieuwenhuizen ]
+  * SPV: Add NonUniform decorations for stores.
+  * SPV: Add NonUniform decoration for OpImages created during lowering.
+  * SPV: Add NonUniform decoration for constructors.
+
+  [ Greg Fischer ]
+  * Add buffer store to nonuniform tests
+  * Add texture sample to nonuniform test
+
+  [ craig stout ]
+  * [Wconversion] Suppress glslang issue (#2404)
+  * [spirv-remap] Fix undefined behavior in hashing (#2403)
+
+  [ pheonix ]
+  * Add more flexible SpirvToolsDisassemble interface to allow specifying spv_target_env for disassembly output. (#2406)
+
+  [ John Kessenich ]
+  * Revert "Add more flexible SpirvToolsDisassemble interface to allow specifying spv_target_env for disassembly output. (#2406)"
+
+  [ pheonix ]
+  * Add new SpirvToolsDisassemble API interface + Improve Doc on existing API interface (#2408)
+
+  [ John Kessenich ]
+  * Revert "Add new SpirvToolsDisassemble API interface + Improve Doc on existing API interface (#2408)"
+
+  [ jonahryandavis ]
+  * Disable -Wno-conversion on MSVC compiler (#2410)
+
+  [ David Neto ]
+  * Add test case for read-only storage texture passed to helper function (#2414)
+
+  [ Rémi Verschelde ]
+  * Remove executable bits from code/data files (#2420)
+
+  [ Triang3l ]
+  * SPIR-V: Remove SpvTools.h include from disassemble.cpp (#2417)
+
+  [ Ben Clayton ]
+  * Add basic GN configurations
+  * Add GN build instructions to README.md
+  * Fix uninitialized use of TIntermediate::resource (#2424)
+  * Kokoro: Add configurations for GN presubmit
+
+  [ Chow ]
+  * Add GL_EXT_fragment_shading_rate
+
+  [ John Kessenich ]
+  * SPV: Update to the latest SPIR-V header, includes variable-rate shading
+
+  [ Ben Clayton ]
+  * Fix GN build and presubmits
+
+  [ Rex Xu ]
+  * HLSL: Add support for printf().
+
+  [ Jaebaek Seo ]
+  * Do not use PropagateLineInfoPass and RedundantLineInfoElimPass (#2440)
+
+  [ Sidney Just ]
+  * Support for CapabilityShaderViewportIndex and CapabilityShaderLayer (#2432)
+
+  [ pheonix ]
+  * Add new SpirvToolsDisassemble API interface + Improve Doc on existing API interface (#2442)
+
+  [ Courtney Goeltzenleuchter ]
+  * Fix build error with Chromium & ANGLE (#2446)
+
+  [ Chow ]
+  * 8. io mapping refine & qualifier member check & resolver expand (#2396)
+
+  [ Tobski ]
+  * Add GL_EXT_shader_image_int64 support (#2409)
+
+  [ Chow ]
+  * Fix warning in iomapper. (#2449)
+
+  [ rdb ]
+  * Fix token-pasting macros not working in preprocessor directives. (#2453)
+
+  [ Jesse Hall ]
+  * Implement GL_EXT_terminate_invocation (#2454)
+
+  [ greg-lunarg ]
+  * New nonuniform analysis (#2457)
+
+  [ David Neto ]
+  * Avoid spuriously adding Geometry capability for vert, tesc, tese (#2462)
+
+  [ Malcolm Bechard ]
+  * tweak local_size comparison a bit (#2456)
+
+  [ Shahbaz Youssefi ]
+  * Compile out code for GL_EXT_shader_image_int64 for ANGLE (#2463)
+    (Closes: #2452)
+
+  [ Daniel Koch ]
+  * Updates for final Vulkan ray tracing extensions (#2466)
+  * Add ray query capability if acceleration structure or ray query types declared (#2469)
+  * update spirv-headers and fix handling of gl_HitTEXT (#2471)
+
+  [ greg-lunarg ]
+  * Update spirv-tools known-good (#2473)
+
+  [ John Zupin ]
+  * packaging: update copyright
+  * packaging: rebase patches
+
+  [ greg-lunarg ]
+  * Update spirv-tools known-good #2 - Pick up ray tracing terminator fix (#2478)
+
+ -- John Zupin <john@odin>  Tue, 08 Dec 2020 10:36:01 -0700
+
 glslang (8.13.3743+242-1lunarg18.04-1) bionic; urgency=medium
 
   [ David Neto ]
