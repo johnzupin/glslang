@@ -1,3 +1,86 @@
+glslang (11.1.0+54~rc1-1lunarg20.04-1) focal; urgency=medium
+
+  [ nihui ]
+  * Fix build android ndk r16b
+
+  [ greg-lunarg ]
+  * Fix Travis to use pre-breakage googletest (#2481)
+
+  [ Greg Fischer ]
+  * Update README to avoid googletest breakage
+
+  [ Daniel Koch ]
+  * Fix SPV return type of rayQueryGetIntersectionInstanceShaderBindingTableRecordOffsetEXT (#2484)
+
+  [ Evgeny Proydakov ]
+  * Fixed compile warning in reflection.cpp for ENABLE_HLSL = 0 build. [-Wunused-parameter]
+
+  [ David Neto ]
+  * Update known_good, pick up ImageRead result validation
+  * Test updates for ImageRead result type validation
+
+  [ rdb ]
+  * Don't use roundEven() to implement round() in DX9 compatibility mode
+
+  [ Greg Fischer ]
+  * Fix cut and paste error
+
+  [ nihui ]
+  * Update ParseHelper.cpp
+
+  [ Denis Zalevskiy ]
+  * Fix option replacement when flags are empty
+
+  [ Greg Fischer ]
+  * Fix debugInfo test to target vulkan1.1 as intended
+
+  [ Jeremy Hayes ]
+  * Prevent HLSL input under OpenGL semantics
+
+  [ Craig Stout ]
+  * Add CMake support for Fuchsia
+
+  [ Ben Clayton ]
+  * license-checker.cfg: Update rules
+
+  [ Sergey Kosarevsky ]
+  * Fix missing enum values in the C-interface #2507
+
+  [ John Kessenich ]
+  * Implement GL_EXT_null_initializer
+
+  [ Jeff Bolz ]
+  * Add missing capability when QueueFamily scope is used
+
+  [ Caio Marcelo de Oliveira Filho ]
+  * Consider GL_EXT_scalar_block_layout when validating SPIR-V
+  * Update known_good.json to pick up SPV_KHR_workgroup_memory_explicit_layout
+  * Add support for GL_EXT_shared_memory_block
+
+  [ Gleb Mazovetskiy ]
+  * callGraph.push_front -> emplace_front to fix UBSAN
+
+  [ David Neto ]
+  * Remove useless semicolon
+
+  [ Evgeny Proydakov ]
+  * Fixed issues 2496. Used option 4: parse_version.cmake to avoid python3 usage.
+  * Code review. Thx ben-clayton for comments.
+
+  [ Greg Fischer ]
+  * Update spirv-tools and spirv-header known good.
+
+  [ Julius Ikkala ]
+  * Pass environment through PreprocessDeferred
+
+  [ Chow ]
+  * Fix issue for new unique id system. Add level bits to help verifying symbols and split symbol tables. For intermediates rebuilding, now need manually amending level bits for redeclaring built-ins.
+
+  [ Greg Fischer ]
+  * Update CHANGES for 11.1.0
+
+ -- John Zupin <john@odin>  Mon, 22 Feb 2021 15:44:15 -0700
+
 glslang (8.13.3743+289-1lunarg20.04-1) focal; urgency=medium
 
   [ Bas Nieuwenhuizen ]
