@@ -1,3 +1,9 @@
+glslang (11.1.0+54~rc2-1lunarg20.04-1) focal; urgency=medium
+
+  * packaging: updated LunarG's copyrights
+
+ -- John Zupin <john@odin>  Thu, 25 Feb 2021 13:57:49 -0700
+
 glslang (11.1.0+54~rc1-1lunarg20.04-1) focal; urgency=medium
 
   [ nihui ]
