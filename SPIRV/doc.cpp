@@ -917,6 +917,7 @@ const char* CapabilityString(int info)
     case CapabilityRayTracingNV:                    return "RayTracingNV";
     case CapabilityRayTracingKHR:                   return "RayTracingKHR";
     case CapabilityRayQueryKHR:                     return "RayQueryKHR";
+    case CapabilityRayTracingProvisionalKHR:        return "RayTracingProvisionalKHR";
     case CapabilityRayTraversalPrimitiveCullingKHR: return "RayTraversalPrimitiveCullingKHR";
     case CapabilityComputeDerivativeGroupQuadsNV:   return "ComputeDerivativeGroupQuadsNV";
     case CapabilityComputeDerivativeGroupLinearNV:  return "ComputeDerivativeGroupLinearNV";
@@ -966,6 +967,10 @@ const char* CapabilityString(int info)
 
     case CapabilityAtomicFloat32AddEXT:                     return "AtomicFloat32AddEXT";
     case CapabilityAtomicFloat64AddEXT:                     return "AtomicFloat64AddEXT";
+
+    case CapabilityWorkgroupMemoryExplicitLayoutKHR:            return "CapabilityWorkgroupMemoryExplicitLayoutKHR";
+    case CapabilityWorkgroupMemoryExplicitLayout8BitAccessKHR:  return "CapabilityWorkgroupMemoryExplicitLayout8BitAccessKHR";
+    case CapabilityWorkgroupMemoryExplicitLayout16BitAccessKHR: return "CapabilityWorkgroupMemoryExplicitLayout16BitAccessKHR";
 
     default: return "Bad";
     }
@@ -2714,7 +2719,7 @@ void Parameterize()
 
     InstructionDesc[OpGroupNonUniformQuadSwap].operands.push(OperandScope, "'Execution'");
     InstructionDesc[OpGroupNonUniformQuadSwap].operands.push(OperandId, "X");
-    InstructionDesc[OpGroupNonUniformQuadSwap].operands.push(OperandLiteralNumber, "'Direction'");
+    InstructionDesc[OpGroupNonUniformQuadSwap].operands.push(OperandId, "'Direction'");
 
     InstructionDesc[OpSubgroupBallotKHR].operands.push(OperandId, "'Predicate'");
 
