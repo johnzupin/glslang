@@ -1,3 +1,146 @@
+glslang (11.4.0~rc1-1lunarg20.04-1) focal; urgency=medium
+
+  [ ZhiqianXia ]
+  * Cannot specify atomic counter with location.
+  * Cannot specify atomic counter with location.
+  * Cannot specify atomic counter with location.
+
+  [ Evgeny Proydakov ]
+  * Fixed cmake generation warning for regeneration project build files.
+
+  [ Daniel Koch ]
+  * Fix warning in build
+
+  [ Greg Fischer ]
+  * Update CHANGES.md to 11.2.0 to sync with current tagging.
+
+  [ ZhiqianXia ]
+  * Replace the old version math func with C++11 to prevent some presicion issue.
+
+  [ Evgeny Proydakov ]
+  * Code review. Thx `greg-lunarg` for comments.
+  * Fixed msvc 2019 nmake noexcept build.
+
+  [ Jeremy Hayes ]
+  * Require fixed workgroup size declaration
+
+  [ ZhiqianXia ]
+  * fix a typo
+
+  [ Rex Xu ]
+  * SPV: Change the key of extBuiltinMap to std::string
+
+  [ Evgeny Proydakov ]
+  * Returned using find_host_package for PythonInterp 3 instead of find_package.
+
+  [ Greg Fischer ]
+  * Fix precision propagation around shifts
+  * Fix off-by-1 bug in gl_MaxCombinedTextureImageUnits check
+  * Allow grad texture ops in all shaders
+  * Allow DepthUnchanged and DepthReplaced Modes in same SPIR-V module.
+
+  [ Rex Xu ]
+  * SPV: The capability string for RayTracingProvisionalKHR is missing
+
+  [ will brown ]
+  * Implement GL_EXT_vulkan_glsl_relaxed option
+
+  [ Greg Fischer ]
+  * Pass correct proxy type for atomicStore
+
+  [ greg-lunarg ]
+  * Revert "GL_ext_vulkan_glsl_relaxed extension support, and cross stage aware IO mapper"
+
+  [ feifei14119 ]
+  * 1. fix macro definition value for unsinged-int64-vector, according to kronos spec at https://www.khronos.org/registry/OpenGL/extensions/ARB/ARB_gpu_shader_int64.txt; 2. fix typo in reflection
+
+  [ greg-lunarg ]
+  * Revert "Revert "GL_ext_vulkan_glsl_relaxed extension support, and cross stage aware IO mapper""
+
+  [ John Zupin ]
+  * packaging: update debian/copyright file
+
+  [ Malcolm Bechard ]
+  * fix variable capitilization. Don't initialize it in the struct's constructor
+  * Fix issue with remapping global uniform blocks
+  * Partial fix for inconsistencies re: #2578
+
+  [ Sidney Just ]
+  * Fixed OpGroupNonUniformQuadBroadcast Direction operand being marked as a literal
+
+  [ Scott Bennett ]
+  * Add cmd_bat action to bazel export_spirv_headers target
+
+  [ Malcolm Bechard ]
+  * Don't check precision qualifiers on cross-stage checks
+
+  [ Jeremy Hayes ]
+  * Default to KHR extension
+
+  [ Ben Clayton ]
+  * Fix warnings about int comparisons of different signness
+
+  [ Jeremy Hayes ]
+  * Update minimum SPIR-V requirement
+
+  [ Pankaj Mistry ]
+  * For bug #2580: sparseTextureGatherOffsetsARB should only take constant offsets.
+
+  [ Greg Fischer ]
+  * Fix SPIR-V for HLSL EvaluateAttribute* of interpolants in structs
+  * Do not propagate packing qualifiers to scalars or vectors
+  * Revert "Update minimum SPIR-V requirement for GL_EXT_buffer_reference"
+
+  [ Krzysztof Pilch ]
+  * Removed condition for glslang-default-resource-limits instalation.
+
+  [ Nicholas Barlow ]
+  * Add setter for TInterimSelection.condition
+
+  [ Krzysztof Pilch ]
+  * Fixed CMake configuration for resource-limits library.
+
+  [ Jeremy Hayes ]
+  * Issue error when declaration rule fails
+  * Fix table key and whitespace
+
+  [ Greg Fischer ]
+  * Get rid of extra semicolon causing gcc 10.3 troubles.
+
+  [ David Neto ]
+  * Add IntLog2 and use it
+
+  [ ZhiqianXia ]
+  * TextureOffset not support sampler2DArrayShadow sampler until 430.
+
+  [ Greg Fischer ]
+  * Add missing builtins for GL_EXT_explicit_arithmetic_types for es
+
+  [ ZaOniRinku ]
+  * Fix typo in ShaderLang.h
+
+  [ Greg Fischer ]
+  * Fix and enable textureOffset_samper2darrayshadow test
+
+  [ Robin Quint ]
+  * Exposed #856 as --hlsl-sampled-textures in the StandAlone
+
+  [ Georg Lehmann ]
+  * Add a --depfile option.
+  * Add some basic --depfile tests
+
+  [ Greg Fischer ]
+  * Change --hlsl-sampled-textures to --auto-sampled-textures
+  * Update spirv-tools and spirv-headers known good
+  * Update CHANGES for 11.3.0
+  * Fix CMakeLists.txt to keep compatibility with CMake 3.10.2
+  * Update CHANGES for 11.4.0
+
+  [ John Zupin ]
+  * packaging: rebased patches
+
+ -- John Zupin <john@odin>  Tue, 27 Apr 2021 13:37:26 -0600
+
 glslang (11.1.0+54~rc2-1lunarg20.04-1) focal; urgency=medium
 
   * packaging: updated LunarG's copyrights
