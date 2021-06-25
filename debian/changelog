@@ -1,3 +1,81 @@
+glslang (11.5.0~rc1-1lunarg18.04-1) bionic; urgency=medium
+
+  [ Robin Quint ]
+  * Added usage hint for --auto-sampled-textures, added test cases
+  * Improved usage hint
+
+  [ okuoku ]
+  * Set CMake policy CMP0054 to NEW to silence warning
+
+  [ Panagiotis Christopoulos Charitos ]
+  * Add support for 64bit integer types and 64bit integer vector types to bitCount() builtin.
+
+  [ Greg Fischer ]
+  * Fix arrays dimensioned with spec constant sized gl_WorkGroupSize
+
+  [ xantares ]
+  * Dont export inline TObjectReflection::getType()
+
+  [ tgfrerer ]
+  * fix error message for hlslGrammar::acceptConstructor
+
+  [ John Stiles ]
+  * Fix mat4x2(scalar) constructor.
+
+  [ Greg Fischer ]
+  * Do true SPV type check for function array arg linkage
+  * Add missing libs to release
+
+  [ syntheticmagus ]
+  * Add setters for true and false blocks of selection nodes, copying the pattern already used for the condition.
+
+  [ Shahbaz Youssefi ]
+  * Fix OOB write in matrix constructor
+  * Fix UBSAN error with negating 0x8000'0000
+
+  [ John Kessenich ]
+  * Implement GL_EXT_subgroup_uniform_control_flow.
+
+  [ Jaebaek Seo ]
+  * Update known_good.json for SPIRV-Tools
+  * Fix unit test failures
+
+  [ Rex Xu ]
+  * Implement the extension GL_EXT_spirv_intrinsics
+
+  [ Greg Fischer ]
+  * Add support for float spec const vector initialization
+
+  [ Malcolm Bechard ]
+  * only declare compatibility gl_ variables in compatibility mode
+
+  [ Sidney Just ]
+  * Fixed SPIR-V remapper not remapping OpExtInst instruction set IDs
+
+  [ Alan Baker ]
+  * Update known good SPIRV-Tools and SPIRV-Headers
+  * Update test expectations
+
+  [ Greg Fischer ]
+  * Remove output variables from compute regression tests
+
+  [ Jason Ekstrand ]
+  * Implement GLSL_EXT_shader_atomic_float2
+
+  [ Natalie Chouinard ]
+  * Remove unused variable Num_string_literal_EXTs
+
+  [ David Neto ]
+  * Android.mk: Add SpirvIntrinsics.cpp
+
+  [ Greg Fischer ]
+  * Update known goods and CHANGES for 11.5.0
+
+  [ John Zupin ]
+  * packaging: rebased packages
+
+ -- John Zupin <john@odin>  Fri, 25 Jun 2021 14:10:29 -0600
+
 glslang (11.4.0~rc1-1lunarg18.04-1) bionic; urgency=medium
 
   [ ZhiqianXia ]
