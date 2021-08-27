@@ -1,3 +1,62 @@
+glslang (11.6.0~rc1-1lunarg20.04-1) focal; urgency=medium
+
+  [ ZhiqianXia ]
+  * Atomic memory function can only be used for shader storage block member or shared variable.
+  * Add support for gl_MaxVaryingVectors for ogl.
+
+  [ Greg Fischer ]
+  * Revert "Atomic memory function can only be used for shader storage block member or shared variable."
+
+  [ ZhiqianXia ]
+  * Atomic memory function can only be used for shader storage block member or shared variable.
+
+  [ andrei.malashkin ]
+  * add possibility to not override runtime of MSVC
+  * make AND to upper case
+
+  [ Shahbaz Youssefi ]
+  * Fix loading bool arrays from interface blocks
+
+  [ ZhiqianXia ]
+  * Support Uint to Int implicit conversions at #extension GL_ARB_gpu_shader5.
+
+  [ Yun Hsiao Wu ]
+  * Fix per-set argument parsing in standalone
+
+  [ Peter Kasting ]
+  * Fix some instances of -Wunused-but-set-variable.
+
+  [ Nathan Reed ]
+  * Fix OpImageRead result type when compiling HLSL (#2706)
+
+  [ Jeremy Hayes ]
+  * Generate separate stores for partially swizzled memory stores
+
+  [ andrei.malashkin ]
+  * correct ident
+
+  [ Greg Fischer ]
+  * Allow layout(std430) uniform with GL_EXT_scalar_block_layout
+  * Add support for pragma STDGL invariant(all)
+
+  [ ZhiqianXia ]
+  * Support Extension GL_ARB_shader_atomic_counter_ops and relative intrisic functions.
+
+  [ Alastair Cota ]
+  * Update CMakeLists.txt
+
+  [ Greg Fischer ]
+  * Fix seperate stores to swizzled lvalue.
+
+  [ alelenv ]
+  * Add support for GL_NV_ray_tracing_motion_blur.
+  * Update known_good for SPV_NV_ray_tracing_motion_blur.
+
+  [ Greg Fischer ]
+  * Update known goods and CHANGES for 11.6.0
+
+ -- John Zupin <john@odin>  Fri, 27 Aug 2021 15:40:24 -0600
+
 glslang (11.5.0~rc1-1lunarg20.04-1) focal; urgency=medium
 
   [ Robin Quint ]
