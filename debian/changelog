@@ -1,3 +1,106 @@
+glslang (11.7.0+2~rc1-1lunarg20.04-1) focal; urgency=medium
+
+  [ Kevin McCullough ]
+  * Fix isIoResizeArray() tessellation stage handling
+
+  [ Jeremy Hayes ]
+  * Fix GCC warnings
+
+  [ Greg Fischer ]
+  * Perform update_precision on constructors and converts
+
+  [ InsertAReallyCreativeNameHere ]
+  * Change MINGW_HAS_SECURE_API checks.
+
+  [ Greg Fischer ]
+  * Run update_precision() on array and matrix constructors.
+
+  [ Malcolm Bechard ]
+  * avoid growing the global uniform block with duplicates
+  * GL_EXT_vulkan_glsl_relaxed - retarget gl_VertexID to gl_VertexIndex
+
+  [ Greg Fischer ]
+  * Fix SPIR-V for SampleBias
+
+  [ Malcolm Bechard ]
+  * Auto push constant blocks (#2764)
+
+  [ Greg Fischer ]
+  * Fix unreachable code in getSampledType()
+  * Scalarize vector readFirstInvocationARB (#2766)
+  * Fix variable scoping of do-while
+
+  [ Malcolm Bechard ]
+  * rename member variable for clarity
+
+  [ Nathaniel Cesario ]
+  * cmake: Remove "conditions" from endif
+
+  [ Kevin McCullough ]
+  * Fix cross-stage check to allow subsequent stage to use previous stage's binding
+
+  [ Chris Forbes ]
+  * Untangle use of core glslang version enums in SpvPostProcess
+
+  [ Rex Xu ]
+  * Make modifications of GL_EXT_spirv_intrinsics
+
+  [ amhagan ]
+  * GL_EXT_spirv_intrinsics - Port extensions
+
+  [ David Neto ]
+  * Fix Cmake rule for extension header generation
+
+  [ alelenv ]
+  * Skip auto decorating shader record buffer blocks with 'set' and 'binding'.
+
+  [ Greg Fischer ]
+  * Accept gl_ViewportMask in version 430 and later
+  * Allow 8/16-bit integer as array index
+
+  [ Jeremy Hayes ]
+  * Return new allocator for copied containers
+
+  [ Greg Fischer ]
+  * Remove support for double trig, pow, exp and log
+
+  [ ZhiqianXia ]
+  * To be compatible with Feature: 'last case/default label not followed by statements'.
+  * Add the GL_EXT_shader_integer_mix Preamble for glsl.
+
+  [ Alan Baker ]
+  * Update SPIRV-Tools and SPIRV-Headers
+  * Update test expectations
+
+  [ ZhiqianXia ]
+  * Support the #extension GL_ARB_draw_instanced.
+
+  [ Lynne ]
+  * Add support for targeting Vulkan 1.2 in the C API
+
+  [ Niklas Haas ]
+  * Initialize global mutex in a thread-safe manner
+  * Don't release global mutex before initialize/finalize is done
+
+  [ Kevin McCullough ]
+  * Fix incorrect link time validation for unused gl_PerVertex members
+
+  [ Marius Hillenbrand ]
+  * Use intermOut.cpp's IsNan and IsInfinity for parse-time constant folding
+
+  [ Greg Fischer ]
+  * Fix test spv.1.4.OpEntryPoint.frag
+  * Revert "Use intermOut.cpp's IsNan and IsInfinity for parse-time constant folding"
+  * Generate error for binding on push_constant
+  * Update to latest spirv-headers
+  * Release 11.7.0
+  * Revert port of GL_EXT_shader_realtime_clock to GL_EXT_spirv_intrinsics
+
+  [ John Zupin ]
+  * packaging: rebased patches
+
+ -- John Zupin <john@odin>  Tue, 16 Nov 2021 16:33:22 -0700
+
 glslang (11.6.0~rc1-1lunarg20.04-1) focal; urgency=medium
 
   [ ZhiqianXia ]
