@@ -7,7 +7,7 @@ Subject: patch: HLSL cmake install location to cmake/glslang
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/hlsl/CMakeLists.txt b/hlsl/CMakeLists.txt
-index 62faa19..df6929e 100644
+index 7d5bc15..3f83ce2 100644
 --- a/hlsl/CMakeLists.txt
 +++ b/hlsl/CMakeLists.txt
 @@ -55,5 +55,5 @@ if(ENABLE_GLSLANG_INSTALL)
@@ -16,4 +16,4 @@ index 62faa19..df6929e 100644
      endif()
 -	install(EXPORT HLSLTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
 +	install(EXPORT HLSLTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/glslang)
- endif(ENABLE_GLSLANG_INSTALL)
+ endif()
