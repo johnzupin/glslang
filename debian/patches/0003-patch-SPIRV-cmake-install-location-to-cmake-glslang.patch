@@ -7,7 +7,7 @@ Subject: patch: SPIRV cmake install location to cmake/glslang
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/SPIRV/CMakeLists.txt b/SPIRV/CMakeLists.txt
-index d699dad..2b86f27 100644
+index 22f767d..01a9f50 100644
 --- a/SPIRV/CMakeLists.txt
 +++ b/SPIRV/CMakeLists.txt
 @@ -129,10 +129,10 @@ if(ENABLE_GLSLANG_INSTALL)
@@ -22,4 +22,4 @@ index d699dad..2b86f27 100644
 +    install(EXPORT SPIRVTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/glslang)
  
      install(FILES ${HEADERS} ${SPVREMAP_HEADERS} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/glslang/SPIRV/)
- endif(ENABLE_GLSLANG_INSTALL)
+ endif()

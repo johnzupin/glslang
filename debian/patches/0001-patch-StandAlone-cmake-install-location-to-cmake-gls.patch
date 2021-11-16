@@ -7,10 +7,10 @@ Subject: patch: StandAlone cmake install location to cmake/glslang
  1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/StandAlone/CMakeLists.txt b/StandAlone/CMakeLists.txt
-index 751d1cd..92426c6 100644
+index 2b163e7..af902cb 100644
 --- a/StandAlone/CMakeLists.txt
 +++ b/StandAlone/CMakeLists.txt
-@@ -90,12 +90,12 @@ endif(WIN32)
+@@ -106,12 +106,12 @@ endif()
  if(ENABLE_GLSLANG_INSTALL)
      install(TARGETS glslangValidator EXPORT glslangValidatorTargets
              RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
@@ -25,10 +25,10 @@ index 751d1cd..92426c6 100644
      endif()
  
      if(BUILD_SHARED_LIBS)
-@@ -107,5 +107,5 @@ if(ENABLE_GLSLANG_INSTALL)
+@@ -123,5 +123,5 @@ if(ENABLE_GLSLANG_INSTALL)
          install(TARGETS glslang-default-resource-limits EXPORT glslang-default-resource-limitsTargets
                  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
      endif()
 -    install(EXPORT glslang-default-resource-limitsTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
 +    install(EXPORT glslang-default-resource-limitsTargets DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/glslang)
- endif(ENABLE_GLSLANG_INSTALL)
+ endif()
