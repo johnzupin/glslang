@@ -163,12 +163,12 @@ typedef enum {
 } EShTargetLanguage;
 
 typedef enum {
-    EShTargetUniversal = 0,                           // Universal
     EShTargetVulkan_1_0 = (1 << 22),                  // Vulkan 1.0
     EShTargetVulkan_1_1 = (1 << 22) | (1 << 12),      // Vulkan 1.1
     EShTargetVulkan_1_2 = (1 << 22) | (2 << 12),      // Vulkan 1.2
+    EShTargetVulkan_1_3 = (1 << 22) | (3 << 12),      // Vulkan 1.3
     EShTargetOpenGL_450 = 450,                        // OpenGL
-    LAST_ELEMENT_MARKER(EShTargetClientVersionCount = 4),
+    LAST_ELEMENT_MARKER(EShTargetClientVersionCount = 5),
 } EShTargetClientVersion;
 
 typedef EShTargetClientVersion EshTargetClientVersion;

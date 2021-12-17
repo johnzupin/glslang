@@ -126,7 +126,7 @@ TEST_P(CompileToSpirv14Test, FromFile)
 TEST_P(CompileToSpirv16Test, FromFile)
 {
     loadFileCompileAndCheck(GlobalTestSettings.testRoot, GetParam(),
-                            Source::GLSL, Semantics::Vulkan, glslang::EShTargetUniversal, glslang::EShTargetSpv_1_6,
+                            Source::GLSL, Semantics::Vulkan, glslang::EShTargetVulkan_1_3, glslang::EShTargetSpv_1_6,
                             Target::Spv);
 }
 

@@ -85,7 +85,7 @@ TEST_P(HlslVulkan1_1CompileTest, FromFile)
 TEST_P(HlslSpv1_6CompileTest, FromFile)
 {
     loadFileCompileAndCheck(GlobalTestSettings.testRoot, GetParam().fileName,
-                            Source::HLSL, Semantics::Vulkan, glslang::EShTargetUniversal, glslang::EShTargetSpv_1_6,
+                            Source::HLSL, Semantics::Vulkan, glslang::EShTargetVulkan_1_3, glslang::EShTargetSpv_1_6,
                             Target::BothASTAndSpv, true, GetParam().entryPoint);
 }
 
