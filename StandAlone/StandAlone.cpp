@@ -788,9 +788,13 @@ void ProcessArguments(std::vector<std::unique_ptr<glslang::TWorkItem>>& workItem
                             } else if (strcmp(argv[1], "spirv1.5") == 0) {
                                 TargetLanguage = glslang::EShTargetSpv;
                                 TargetVersion = glslang::EShTargetSpv_1_5;
+                            } else if (strcmp(argv[1], "spirv1.6") == 0) {
+                                TargetLanguage = glslang::EShTargetSpv;
+                                TargetVersion = glslang::EShTargetSpv_1_6;
                             } else
-                                Error("--target-env expected one of: vulkan1.0, vulkan1.1, vulkan1.2, opengl,\n"
-                                      "spirv1.0, spirv1.1, spirv1.2, spirv1.3, spirv1.4, or spirv1.5");
+                                Error("--target-env expected one of: vulkan1.0, vulkan1.1, vulkan1.2,\n"
+                                      "opengl, spirv1.0, spirv1.1, spirv1.2, spirv1.3,\n"
+                                      "spirv1.4, spirv1.5 or spirv1.6");
                         }
                         bumpArg();
                     } else if (lowerword == "undef-macro" ||
@@ -1930,16 +1934,18 @@ void usage()
            "  --sep                             synonym for --source-entrypoint\n"
            "  --stdin                           read from stdin instead of from a file;\n"
            "                                    requires providing the shader stage using -S\n"
-           "  --target-env {vulkan1.0 | vulkan1.1 | opengl | \n"
-           "                spirv1.0 | spirv1.1 | spirv1.2 | spirv1.3 | spirv1.4 | spirv1.5}\n"
-           "                                    set execution environment that emitted code\n"
-           "                                    will execute in (versus source language\n"
-           "                                    semantics selected by --client) defaults:\n"
-           "                                     * 'vulkan1.0' under '--client vulkan<ver>'\n"
-           "                                     * 'opengl' under '--client opengl<ver>'\n"
-           "                                     * 'spirv1.0' under --target-env vulkan1.0\n"
-           "                                     * 'spirv1.3' under --target-env vulkan1.1\n"
-           "                                    multiple --targen-env can be specified.\n"
+           "  --target-env {vulkan1.0 | vulkan1.1 | vulkan1.2 | opengl |\n"
+           "                spirv1.0 | spirv1.1 | spirv1.2 | spirv1.3 | spirv1.4 |\n"
+           "                spirv1.5 | spirv1.6}\n"
+           "                                    Set the execution environment that the\n"
+           "                                    generated code will be executed in.\n"
+           "                                    Defaults to:\n"
+           "                                     * vulkan1.0 under --client vulkan<ver>\n"
+           "                                     * opengl    under --client opengl<ver>\n"
+           "                                     * spirv1.0  under --target-env vulkan1.0\n"
+           "                                     * spirv1.3  under --target-env vulkan1.1\n"
+           "                                     * spirv1.5  under --target-env vulkan1.2\n"
+           "                                    Multiple --target-env can be specified.\n"
            "  --variable-name <name>\n"
            "  --vn <name>                       creates a C header file that contains a\n"
            "                                    uint32_t array named <name>\n"
