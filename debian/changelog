@@ -1,3 +1,198 @@
+glslang (11.7.1+300~rc1-1lunarg20.04-1) focal; urgency=medium
+
+  [ Lei Zhang ]
+  * Reorder OpSource according to version 1.
+
+  [ John Kessenich ]
+  * Revert "Merge branch 'opsource-order' into 'master'"
+
+  [ Dan Ginsburg ]
+  * Fix a compile error on VS2013 when including from a project that includes windows.h and does not define NOMINMAX (http://stackoverflow.com/questions/2789481/problem-calling-stdmax)
+
+  [ John Kessenich ]
+  * Newline fix.
+  * Wholesale update to current snapshot of GitHub.
+  * README update for GitLab appropriateness.
+
+  [ Kerch Holt ]
+  * Adds SPV_KHR_shader_draw_parameter extension functionality for SPIR-V.
+
+  [ Ashwin Kolhe ]
+  * Implement SPV_KHR_subgroup_vote
+
+  [ Kerch Holt ]
+  * Added gtest changes for SPV_KHR_shader_draw_parameters.
+
+  [ Ashwin Kolhe ]
+  * Implement SPV_KHR_subgroup_vote
+  * Fix line endings
+  * Coding convention fix
+  * Implement SPIR-V extension SPV_KHR_device_group
+  * Implement SPIR-V extension SPV_KHR_multiview
+  * Added test case for SPV_KHR_multiview
+  * Added test case to SPV_KHR_device_group
+
+  [ John Kessenich ]
+  * Fix test change from previous changes.
+
+  [ Neil Henning ]
+  * Add shader subgroup support.
+  * Build fix.
+  * Address most feedback.
+  * Move subgroup ops to correctly guarded section.
+  * Hack the SPIR-V version to 1.0 to make all the tests stop failing.
+  * Very WIP wave ops.
+
+  [ John Kessenich ]
+  * GLSL Subgroups: Only include 'double' built-in functions for some versions.
+  * Subgroup fixes: fragment 'in' must be flat, consistent version testing, per-stage corrections, etc.
+  * SPV: Bump version of SPV up to 1.2, revision 1.
+
+  [ Neil Henning ]
+  * Fix subgroup regression whereby gl_* variables were not available in geometry or tessellation stages.
+
+  [ John Kessenich ]
+  * SPV: Add support for testing against Vulkan 1.1.
+
+  [ Alexander Galazin ]
+  * Explicit types support
+
+  [ Daniel Koch ]
+  * Remove duplicate definition of ARB_SDB builtins
+
+  [ John Kessenich ]
+  * Unconditionally emit CapabilityMultiViewport on declaration of BuiltInViewportIndex.
+  * Add support for selecting SPIR-V versions via the vulkan target environment.
+  * Turn on OpModuleProcessed, connected to vulkan1.1.
+  * SPV: Fix GLSL/HLSL atomicDecrement.
+
+  [ Alexander Galazin ]
+  * Restore original canImplicitlyPromote implementation
+
+  [ John Kessenich ]
+  * Add EbtInt and EbtuInt to isIntegerDomain().
+  * Add a Khronos-private version of known-good for SPIR-V Tools.
+  * SPV: Move to the latest 1.3 headers.
+
+  [ GregF ]
+  * Fix gitlab known-good to correct commits.
+
+  [ Mike Weiblen ]
+  * Fix external update script for GitHub SSH access
+
+  [ John Kessenich ]
+  * Remove LunarG-specific script that does not work for me, and should not merge to GitHub.
+  * Address subgroup-memory part of #47.
+  * SPV: Add cluster-size rule checking.
+  * Subgroups: Finish fixing GitLab issue 47.
+
+  [ Neil Henning ]
+  * Add support for the latest shader model 6.0 wave specs.
+
+  [ GregF ]
+  * Update known_good_khr.json to vulkan-1.1-rc3
+  * Add --site gitlab to update_glslang_sources command in README
+  * Update known-good
+
+  [ John Kessenich ]
+  * SPV: Add missing break statements in type declarations.
+  * SPV: add version checks for AMD type extensions.
+  * Testing: Add infrastructure for testing targets of Vulkan 1.0 versus 1.1.
+  * SPV: Don't emit extensions for SPIR-V 1.3 incorporated extensions.
+  * SPV subgroups: Semantic check that SPIR-V 1.3 is targeted.
+  * Tests: Remove unused test results.
+  * Non-functional: Remove meaning of 100 from Vulkan target version.
+  * Versioning: Move to symbolic version numbers for SPV 1.0 vs 1.3 and Vulkan 1.0 vs. 1.1.
+  * SPV: Adjust generator number and trivial differences with GitHub.
+  * Versioning: Move to using enums.
+  * Arithmetic types: Several u8const needed to be u16const.
+  * AMD_EXTENSIONS: Fix location of #endif, so that project compiles.
+  * Version: bump minor version
+  * GLSL: Implement nonuniformEXT keyword, declarations, and constructor.
+  * SPV: Implement NonUniformEXT decoration: pass through, and load propagation.
+  * Tests: Update nonuniform tests, based on spec. clarification discussion.
+  * nonuniform: prevent use of struct/block members.
+  * Nonuniform: Rationalize all use of unsized arrays. Support unsized resources.
+  * Nonuniform: add CapabilityShaderNonUniformEXT, CapabilityRuntimeDescriptorArrayEXT, and "SPV_EXT_descriptor_indexing"
+  * Implicit Arrays: Use much simpler method to update implicit array sizes.
+  * nonuniform: expand test for all types that can be arrayed.
+  * Nonuniform: sync to official SPIR-V header.
+  * nonuniform: emit the 10 indexing capabilities
+  * Nonuniform: Propagate through GLSL expressions.
+  * Nonuniform: Finish semantic checking.
+  * Non-functional GLSL: Simplify logic in handleBracketDereference().
+  * GLSL: Rationalize minimum version testing for different type bit widths.
+
+  [ Jeff Bolz ]
+  * GLSL/SPV: Implement GL_EXT_shader_16bit_storage/GL_EXT_shader_8bit_storage extensions, which introduce limited support for 8/16-bit types such that they can only be accessed in buffer memory and converted to/from 32-bit types
+
+  [ John Kessenich ]
+  * Implement streams for built-in blocks.
+  * SPV: Support SPIR-V 1.5; five extensions no longer need OpExtension.
+  * GLSL: Only require constant for subgroupBroadcast when SPV < 1.5.
+
+  [ ZhiqianXia ]
+  * Support the textureQueryLOD at #extension GL_ARB_texture_query_lod.
+  * #extension GL_ARB_gpu_shader5 support the implicit conversion , So the best function matching algorithm should be actived.
+  * Support the #extension GL_ARB_fragment_coord_conventions.
+
+  [ Marius Hillenbrand ]
+  * Use intermOut.cpp's IsNan and IsInfinity for parse-time constant folding (updated)
+  * TIntermediate::promoteConstantUnion(): fix conversion to int8
+
+  [ Greg Fischer ]
+  * Fix struct type sharing
+
+  [ Marius Hillenbrand ]
+  * add negative float conversions to test constantUnaryConversion.comp
+  * remove undefined conversions from test constantUnaryConversion.comp
+
+  [ Kevin Athey ]
+  * Initialize member TSymbol::uniqueId.
+
+  [ Alan Baker ]
+  * Update SPIRV-Tools
+
+  [ Greg Fischer ]
+  * Add --hlsl-dx-position-w option
+
+  [ Kevin McCullough ]
+  * Fix issue with separable shader validation in iomapper
+
+  [ Malcolm Bechard ]
+  * remove unneeded extra constructions now that pool allocation is fixed
+
+  [ Rex Xu ]
+  * Fix an issue of spirv_type used in local variable definitions
+  * Remove the test spv.intrinsicsSpecConst
+
+  [ Jeremy Hayes ]
+  * Migrate travis to github actions
+
+  [ Rex Xu ]
+  * Fix an issue of spirv_by_reference
+  * Fix validation failures of test cases regarding GL_EXT_spirv_intrinsics
+
+  [ Hai Nguyen ]
+  * Support for automap options and resource binding shift (#2834)
+  * Vulkan rules relaxed for glslang C interface
+  * Changed Vulkan rules relaxed to use shader options
+  * Fixed copy/paste error
+
+  [ Jeremy Hayes ]
+  * Remove unnecessary badge
+
+  [ Ashwin Lele ]
+  * Do not output location decoration for certain variables in ray tracing storage classes.
+
+  [ Greg Fischer ]
+  * Fix --hlsl-dx-position-w to work for SV_Position embedded in struct
+  * Pickup header for SPIR-V 1.6
+  * Add support for spirv1.6
+  * Add Vulkan 1.3 support
+
+ -- John Zupin <john@odin>  Thu, 20 Jan 2022 14:50:51 -0700
+
 glslang (11.7.0+2~rc1-1lunarg20.04-1) focal; urgency=medium
 
   [ Kevin McCullough ]
