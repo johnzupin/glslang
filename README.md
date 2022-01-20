@@ -1,4 +1,7 @@
-# News
+Private version of glslang for Khronos-internal development.
+
+MRs to add functionality must be accompanied by simple regression tests, which are supplied with the gtests framework.
+See instructions below.
 
 1. Visual Studio 2013 is no longer supported
 
@@ -19,8 +22,8 @@ See issue #1964.
 
 If people are only using this location to get spirv.hpp, I recommend they get that from [SPIRV-Headers](https://github.com/KhronosGroup/SPIRV-Headers) instead.
 
-[![Build Status](https://travis-ci.org/KhronosGroup/glslang.svg?branch=master)](https://travis-ci.org/KhronosGroup/glslang)
-[![Build status](https://ci.appveyor.com/api/projects/status/q6fi9cb0qnhkla68/branch/master?svg=true)](https://ci.appveyor.com/project/Khronoswebmaster/glslang/branch/master)
+[![appveyor status](https://ci.appveyor.com/api/projects/status/q6fi9cb0qnhkla68/branch/master?svg=true)](https://ci.appveyor.com/project/Khronoswebmaster/glslang/branch/master)
+![Continuous Deployment](https://github.com/KhronosGroup/glslang/actions/workflows/continuous_deployment.yml/badge.svg)
 
 # Glslang Components and Status
 
@@ -104,7 +107,7 @@ branch.
 * make: _Linux_, ninja is an alternative, if configured.
 * [Python 3.x][python]: for executing SPIRV-Tools scripts. (Optional if not using SPIRV-Tools and the 'External' subdirectory does not exist.)
 * [bison][bison]: _optional_, but needed when changing the grammar (glslang.y).
-* [googletest][googletest]: _optional_, but should use if making any changes to glslang.
+* [googletest][googletest]: needed if making any changes to glslang.
 
 ### Build steps
 
@@ -115,7 +118,7 @@ shell or some other shell of your choosing.
 
 ```bash
 cd <parent of where you want glslang to be>
-git clone https://github.com/KhronosGroup/glslang.git
+git clone https://gitlab.khronos.org/GLSL/glslang.git
 ```
 
 #### 2) Check-Out External Projects
@@ -139,7 +142,7 @@ wish to invoke -Os to reduce SPIR-V size from HLSL or GLSL, or wish to run the
 integrated test suite, install spirv-tools with this:
 
 ```bash
-./update_glslang_sources.py
+./update_glslang_sources.py --site gitlab
 ```
 
 #### 3) Configure
