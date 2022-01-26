@@ -3,7 +3,7 @@ Upstream-Name: glslang
 Source: https://github.com/KhronosGroup/glslang
 
 Files: *
-Copyright: 2021, LunarG Inc
+Copyright: 2022, LunarG Inc
 License: Apache-2.0
 
 Files: .gn
@@ -70,7 +70,7 @@ Copyright: 2002-2005, 3Dlabs Inc. Ltd
 License: BSD-3-clause
 
 Files: debian/*
-Copyright: 2021, LunarG Inc
+Copyright: 2022, LunarG Inc
 License: BSD-3-clause or GPL-3 or MIT
 
 Files: SPIRV/bitutils.h
