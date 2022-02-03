@@ -1,3 +1,121 @@
+glslang (11.8.0+255~rc1-1lunarg18.04-1) bionic; urgency=medium
+
+  [ ZhiqianXia ]
+  * Support the textureQueryLOD at #extension GL_ARB_texture_query_lod.
+
+  [ Marius Hillenbrand ]
+  * Fix encoding/decoding of string literals for big-endian systems
+
+  [ ZhiqianXia ]
+  * #extension GL_ARB_gpu_shader5 support the implicit conversion , So the best function matching algorithm should be actived.
+  * Support the #extension GL_ARB_fragment_coord_conventions.
+
+  [ Marius Hillenbrand ]
+  * Use intermOut.cpp's IsNan and IsInfinity for parse-time constant folding (updated)
+  * TIntermediate::promoteConstantUnion(): fix conversion to int8
+
+  [ Greg Fischer ]
+  * Fix struct type sharing
+
+  [ Marius Hillenbrand ]
+  * add negative float conversions to test constantUnaryConversion.comp
+  * remove undefined conversions from test constantUnaryConversion.comp
+
+  [ Kevin Athey ]
+  * Initialize member TSymbol::uniqueId.
+
+  [ Alan Baker ]
+  * Update SPIRV-Tools
+
+  [ Greg Fischer ]
+  * Add --hlsl-dx-position-w option
+
+  [ Kevin McCullough ]
+  * Fix issue with separable shader validation in iomapper
+
+  [ Malcolm Bechard ]
+  * remove unneeded extra constructions now that pool allocation is fixed
+
+  [ Rex Xu ]
+  * Fix an issue of spirv_type used in local variable definitions
+  * Remove the test spv.intrinsicsSpecConst
+
+  [ Jeremy Hayes ]
+  * Migrate travis to github actions
+
+  [ Rex Xu ]
+  * Fix an issue of spirv_by_reference
+  * Fix validation failures of test cases regarding GL_EXT_spirv_intrinsics
+
+  [ Hai Nguyen ]
+  * Support for automap options and resource binding shift (#2834)
+  * Vulkan rules relaxed for glslang C interface
+  * Changed Vulkan rules relaxed to use shader options
+  * Fixed copy/paste error
+
+  [ Jeremy Hayes ]
+  * Remove unnecessary badge
+
+  [ Ashwin Lele ]
+  * Do not output location decoration for certain variables in ray tracing storage classes.
+
+  [ Greg Fischer ]
+  * Fix --hlsl-dx-position-w to work for SV_Position embedded in struct
+  * Pickup header for SPIR-V 1.6
+  * Add support for spirv1.6
+
+  [ Jeremy Hayes ]
+  * Fix seg fault
+
+  [ Yilong Li ]
+  * build: Make action targets hermetic
+
+  [ ZhiqianXia ]
+  * EndStreamPrimitive not supported when there is #extension GL_ARB_gpu_shader5
+
+  [ Jeremy Hayes ]
+  * Fix GCC sign-compare warnings
+  * Unblock unsized error from assert
+
+  [ ZhiqianXia ]
+  * Support the floatBitsToint function at GL_ARB_gpu_shader5 Extension.
+
+  [ scribam ]
+  * Override CMAKE_INSTALL_PREFIX only if ENABLE_GLSLANG_INSTALL is ON
+
+  [ Alan Baker ]
+  * Add missing license to LICENSE.txt
+
+  [ Nicolas Morales ]
+  * #2861: Check for macOS systems before adding "--no-undefined" to linker flags as it is not compatible with the default linker.
+  * #2861: If compiling with macOS and GCC, default ENABLE_PCH to false since CMake will generate incompatible Xarch flags for the precompiled headers
+
+  [ Greg Fischer ]
+  * Temporarily disable spirv1.6 tests
+
+  [ Ben Clayton ]
+  * Update LICENSE.txt
+
+  [ Greg Fischer ]
+  * Fix comment for setEnvInput()
+
+  [ John Zupin ]
+  * packaging: update copyright
+
+  [ Greg Fischer ]
+  * Add Vulkan 1.3 support
+  * Fix size_t to int warning
+  * Release 11.8.0
+
+  [ Malcolm Bechard ]
+  * fix cases where symbols in the tree didn't get updated during block merging
+
+  [ Greg Fischer ]
+  * Enhance readability of error messages for GLSL
+  * Update spirv-tools known good
+
+ -- John Zupin <john@odin>  Thu, 03 Feb 2022 14:27:52 -0700
+
 glslang (11.7.0+2~rc1-1lunarg18.04-1) bionic; urgency=medium
 
   [ Kevin McCullough ]
