@@ -150,8 +150,8 @@ typedef enum {
 
 typedef enum {
     EShClientNone,               // use when there is no client, e.g. for validation
-    EShClientVulkan,
-    EShClientOpenGL,
+    EShClientVulkan,             // as GLSL dialect, specifies KHR_vulkan_glsl extension
+    EShClientOpenGL,             // as GLSL dialect, specifies ARB_gl_spirv extension
     LAST_ELEMENT_MARKER(EShClientCount),
 } EShClient;
 
@@ -264,6 +264,7 @@ enum EShMessages : unsigned {
     EShMsgHlslLegalization  = (1 << 12), // enable HLSL Legalization messages
     EShMsgHlslDX9Compatible = (1 << 13), // enable HLSL DX9 compatible mode (for samplers and semantics)
     EShMsgBuiltinSymbolTable = (1 << 14), // print the builtin symbol table
+    EShMsgEnhanced         = (1 << 15), // enhanced message readability
     LAST_ELEMENT_MARKER(EShMsgCount),
 };
 
@@ -488,6 +489,7 @@ public:
     GLSLANG_EXPORT void setUniformLocationBase(int base);
     GLSLANG_EXPORT void setInvertY(bool invert);
     GLSLANG_EXPORT void setDxPositionW(bool dxPosW);
+    GLSLANG_EXPORT void setEnhancedMsgs();
 #ifdef ENABLE_HLSL
     GLSLANG_EXPORT void setHlslIoMapping(bool hlslIoMap);
     GLSLANG_EXPORT void setFlattenUniformArrays(bool flatten);
@@ -515,6 +517,9 @@ public:
     //                 use EShClientNone and version of 0, e.g. for validation mode.
     //                 Note 'version' does not describe the target environment,
     //                 just the version of the source dialect to compile under.
+    //                 For example, to choose the Vulkan dialect of GLSL defined by
+    //                 version 100 of the KHR_vulkan_glsl extension: lang = EShSourceGlsl,
+    //                 dialect = EShClientVulkan, and version = 100.
     //
     //                 See the definitions of TEnvironment, EShSource, EShLanguage,
     //                 and EShClient for choices and more detail.
