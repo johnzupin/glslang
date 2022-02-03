@@ -1,3 +1,55 @@
+glslang (11.8.0+255~rc1-1lunarg20.04-1) focal; urgency=medium
+
+  [ Marius Hillenbrand ]
+  * Fix encoding/decoding of string literals for big-endian systems
+
+  [ Jeremy Hayes ]
+  * Fix seg fault
+
+  [ Yilong Li ]
+  * build: Make action targets hermetic
+
+  [ ZhiqianXia ]
+  * EndStreamPrimitive not supported when there is #extension GL_ARB_gpu_shader5
+
+  [ Jeremy Hayes ]
+  * Fix GCC sign-compare warnings
+  * Unblock unsized error from assert
+
+  [ ZhiqianXia ]
+  * Support the floatBitsToint function at GL_ARB_gpu_shader5 Extension.
+
+  [ scribam ]
+  * Override CMAKE_INSTALL_PREFIX only if ENABLE_GLSLANG_INSTALL is ON
+
+  [ Alan Baker ]
+  * Add missing license to LICENSE.txt
+
+  [ Nicolas Morales ]
+  * #2861: Check for macOS systems before adding "--no-undefined" to linker flags as it is not compatible with the default linker.
+  * #2861: If compiling with macOS and GCC, default ENABLE_PCH to false since CMake will generate incompatible Xarch flags for the precompiled headers
+
+  [ Greg Fischer ]
+  * Temporarily disable spirv1.6 tests
+
+  [ Ben Clayton ]
+  * Update LICENSE.txt
+
+  [ Greg Fischer ]
+  * Fix comment for setEnvInput()
+  * Add Vulkan 1.3 support
+  * Fix size_t to int warning
+  * Release 11.8.0
+
+  [ Malcolm Bechard ]
+  * fix cases where symbols in the tree didn't get updated during block merging
+
+  [ Greg Fischer ]
+  * Enhance readability of error messages for GLSL
+  * Update spirv-tools known good
+
+ -- John Zupin <john@odin>  Thu, 03 Feb 2022 14:29:03 -0700
+
 glslang (11.7.1+300~rc1-1lunarg20.04-1) focal; urgency=medium
 
   [ Lei Zhang ]
