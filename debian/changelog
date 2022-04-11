@@ -1,3 +1,62 @@
+glslang (11.9.0~rc1-1lunarg20.04-1) focal; urgency=medium
+
+  [ Hai Nguyen ]
+  * Added GLSL version override interface and CLI
+  * Updated gtests preprocess()and parse() calls with arg for new parameter
+  * Revisions to GLSL version override
+  * Added initial tests for --glsl-version
+  * Added missing test result
+
+  [ Greg Fischer ]
+  * Fix sameElementShape test of sampler
+
+  [ Malcolm Bechard ]
+  * avoid leaving decorations on auto-push-constants
+
+  [ Brendan Shanks ]
+  * Explicitly use Python 3 for scripts
+
+  [ David Neto ]
+  * Fix Test/hlsl.namespace.frag test case
+
+  [ Greg Fischer ]
+  * Improve error message for image/sampler functions for enhanced-msgs
+  * Don't do updatePrecision on float16_t operations
+
+  [ ZhiqianXia ]
+  * 1. refine the check for "origin_upper_left" and "pixel_center_integer" 2. gl_FragCoord can be used at ogl140 with extension "GL_ARB_fragment_coord_conventions".
+  * The first redeclarations of gl_FragCoord must appear before any use of gl_FragCoord.
+
+  [ Alexey Panteleev ]
+  * Escape the characters that Make considers special in the dependency files.
+
+  [ Biswapriyo Nath ]
+  * cmake: Install SPVRemapper runtime library
+
+  [ sfricke-samsung ]
+  * Prevent Push Constant blocks being an array (#2904)
+
+  [ Greg Fischer ]
+  * Update spirv-tools and spirv-headers known good
+  * Add eliminate-dead-input-components to -Os
+  * Update glsl.versionOverride.comp
+  * Update glsl.versionOverride.frag
+  * Update glsl.versionOverride.geom
+  * Update glsl.versionOverride.tesc
+  * Update glsl.versionOverride.tese
+  * Update glsl.versionOverride.vert
+  * Generate Int8, Int16 and Float16 capabilities for constants
+
+  [ Edoardo Luciani ]
+  * Update README.md
+
+  [ Greg Fischer ]
+  * Improved comment for glslang_optimization_level_t
+  * Update spirv-tools known good
+  * Release 11.9.0
+
+ -- john <john@odin>  Mon, 11 Apr 2022 11:35:58 -0600
+
 glslang (11.8.0+255~rc1-1lunarg20.04-1) focal; urgency=medium
 
   [ Marius Hillenbrand ]
