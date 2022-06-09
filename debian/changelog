@@ -1,3 +1,73 @@
+glslang (11.10.0~rc1-1lunarg18.04-1) bionic; urgency=medium
+
+  [ SpaceIm ]
+  * fix MinGW
+
+  [ Gerry Fan ]
+  * Change ANDROID_NDK_ROOT to ANDROID_NDK_HOME in README.md
+
+  [ tellowkrinkle ]
+  * Add macOS hidden files to gitignore
+
+  [ Ryp ]
+  * Fix WavePrefixCountBits() being off by one.
+
+  [ Marius Bjorge ]
+  * Adding support for GL_EXT_ray_cull_mask
+  * Update spirv-tools and spirv-headers known good
+
+  [ alelenv ]
+  * Disable layout error check for RT ops in presence of EXT_spirv_intrinsics
+
+  [ ahagan ]
+  * Add whitelist filtering for debug comments in SPIRV-Remap.
+
+  [ Malcolm Bechard ]
+  * fix structure indexing reassignment during block merging
+
+  [ David Neto ]
+  * Remove unused variable
+
+  [ Sergey Kosarevsky ]
+  * Android.mk: Add CInterface files
+
+  [ Gabriele Di Bari ]
+  * handleEntryPointAttributes add EatInstance case
+
+  [ Sergey Kosarevsky ]
+  * Add a new C interface example to README.md
+
+  [ Qingyuan Zheng ]
+  * generate OpLine before OpFunction
+
+  [ Gabriele Di Bari ]
+  * Add test for the instance param (geometry shader)
+
+  [ Gabriele91 ]
+  * Add hlsl.instance.geom output
+
+  [ stusmith ]
+  * Add support for VK_EXT_fragment_shader_barycentric
+
+  [ Greg Fischer ]
+  * Fix build for clang + mingw32-make
+
+  [ Qingyuan Zheng ]
+  * use unique_ptr to avoid calling deleted move ctor
+  * avoid using make_unique for c++11 compatibility
+
+  [ Andrea Faulds ]
+  * Avoid duplicate BuiltIn variables for ray tracing matrices (fix #2921)
+
+  [ Greg Fischer ]
+  * Restore legacy interface for remap()
+
+  [ Jeremy Hayes ]
+  * Update known_good.json
+  * Release 11.10.0
+
+ -- john <john@odin>  Thu, 09 Jun 2022 09:35:47 -0600
+
 glslang (11.9.0~rc1-1lunarg18.04-1) bionic; urgency=medium
 
   [ Hai Nguyen ]
