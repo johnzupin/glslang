@@ -1,0 +1,20 @@
+From: John Zupin <johnz@lunarg.com>
+Date: Tue, 23 Jun 2020 16:04:08 -0600
+Subject: patch: OGLCompilersDLL add glslang to install path
+
+---
+ OGLCompilersDLL/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/OGLCompilersDLL/CMakeLists.txt b/OGLCompilersDLL/CMakeLists.txt
+index 8c0e2ba..afdc9a6 100644
+--- a/OGLCompilersDLL/CMakeLists.txt
++++ b/OGLCompilersDLL/CMakeLists.txt
+@@ -54,6 +54,6 @@ if(ENABLE_GLSLANG_INSTALL)
+ 
+         add_library(OGLCompiler ALIAS glslang::OGLCompiler)
+     ")
+-    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/OGLCompilerTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
++    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/OGLCompilerTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/glslang/cmake)
+ 
+ endif(ENABLE_GLSLANG_INSTALL)
