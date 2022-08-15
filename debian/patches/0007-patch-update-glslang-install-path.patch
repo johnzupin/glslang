@@ -1,0 +1,29 @@
+From: John Zupin <johnz@lunarg.com>
+Date: Wed, 24 Jun 2020 10:13:21 -0600
+Subject: patch: update glslang install path
+
+---
+ glslang/CMakeLists.txt | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/glslang/CMakeLists.txt b/glslang/CMakeLists.txt
+index 45c9813..04610c2 100644
+--- a/glslang/CMakeLists.txt
++++ b/glslang/CMakeLists.txt
+@@ -220,7 +220,7 @@ if(ENABLE_GLSLANG_INSTALL)
+             add_library(GenericCodeGen ALIAS glslang::GenericCodeGen)
+         endif()
+     ")
+-    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/glslangTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
++    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/glslangTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/glslang/cmake)
+ 
+     set(ALL_HEADERS
+         ${GLSLANG_HEADERS}
+@@ -231,6 +231,6 @@ if(ENABLE_GLSLANG_INSTALL)
+         install(FILES ${file} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/glslang/${dir})
+     endforeach()
+ 
+-    install(FILES ${GLSLANG_BUILD_INFO_H} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/glslang)
++    install(FILES ${GLSLANG_BUILD_INFO_H} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/glslang/glslang)
+ 
+ endif()
