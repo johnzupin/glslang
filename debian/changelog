@@ -1,3 +1,53 @@
+glslang (11.11.0~rc1-1lunarg18.04-1) bionic; urgency=medium
+
+  [ James0124 ]
+  * CInterface: Add OpSource support.
+
+  [ Greg Fischer ]
+  * Do not generate samplerBuffer for spirv1.6 and beyond
+  * Fix getEnhancedMsgs to work when HLSL not enabled
+
+  [ Niklas Haas ]
+  * Fix version check macros
+
+  [ Jeremy Hayes ]
+  * Emit Int64Atomics for imageAtomicStore
+
+  [ dwang102 ]
+  * Add SPV_AMD_shader_early_and_late_fragment_tests
+
+  [ Thomas Aven ]
+  * Make GL_KHR_ray_query provide EOpConstructAccStruct
+
+  [ sean ]
+  * Fix: Properly include all headers in deployments
+
+  [ Jeremy Hayes ]
+  * Update release description
+  * Replace tabs with spaces
+  * Update MacOS runner
+
+  [ sean ]
+  * Fix: Build arm64 binaries for macOS
+
+  [ David Neto ]
+  * Avoid double-free in functions cloned for vulkan relaxed mode (#2987)
+
+  [ MACHIZAUD Andréa ]
+  * Add unified `glslang` CMake config collecting `glslang-targets` targets (#2989)
+
+  [ Greg Fischer ]
+  * Revert "Fix: Build arm64 binaries for macOS"
+
+  [ Jeremy Hayes ]
+  * Update known_good.json
+  * Update CHANGES for release 11.11.0
+
+  [ John Zupin ]
+  * packaging: rebased/updated patches
+
+ -- john <john@odin>  Mon, 15 Aug 2022 14:03:34 -0600
+
 glslang (11.10.0~rc1-1lunarg18.04-1) bionic; urgency=medium
 
   [ SpaceIm ]
