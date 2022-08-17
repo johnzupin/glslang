@@ -1,3 +1,10 @@
+glslang (11.11.0~rc2-1lunarg20.04-1) focal; urgency=medium
+
+  [ John Zupin ]
+  * packaging: fix patch
+
+ -- john <john@odin>  Wed, 17 Aug 2022 09:02:18 -0600
+
 glslang (11.11.0~rc1-1lunarg20.04-1) focal; urgency=medium
 
   [ James0124 ]
