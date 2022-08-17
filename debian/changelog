@@ -1,3 +1,9 @@
+glslang (11.11.0~rc2-1lunarg18.04-1) bionic; urgency=medium
+
+  * UNRELEASED
+
+ -- john <john@odin>  Wed, 17 Aug 2022 08:53:42 -0600
+
 glslang (11.11.0~rc1-1lunarg18.04-1) bionic; urgency=medium
 
   [ James0124 ]
