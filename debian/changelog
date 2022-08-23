@@ -1,3 +1,10 @@
+glslang (11.11.0~rc3-1lunarg20.04-1) focal; urgency=medium
+
+  [ John Zupin ]
+  * packaging: update patches for cmake install dir
+
+ -- john <john@odin>  Tue, 23 Aug 2022 10:07:59 -0600
+
 glslang (11.11.0~rc2-1lunarg20.04-1) focal; urgency=medium
 
   [ John Zupin ]
