@@ -1,13 +1,13 @@
 From: John Zupin <johnz@lunarg.com>
 Date: Tue, 23 Jun 2020 16:28:21 -0600
-Subject: patch: StandAlone update install paths to include glslang
+Subject: patch: StandAlone update cmake install paths to include glslang
 
 ---
  StandAlone/CMakeLists.txt | 6 +++---
  1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/StandAlone/CMakeLists.txt b/StandAlone/CMakeLists.txt
-index 0275750..e6e54ed 100644
+index 0275750..4e8d7f3 100644
 --- a/StandAlone/CMakeLists.txt
 +++ b/StandAlone/CMakeLists.txt
 @@ -116,7 +116,7 @@ if(ENABLE_GLSLANG_INSTALL)
@@ -24,7 +24,7 @@ index 0275750..e6e54ed 100644
              add_library(spirv-remap ALIAS glslang::spirv-remap)
          ")
 -        install(FILES "${CMAKE_CURRENT_BINARY_DIR}/spirv-remapTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
-+        install(FILES "${CMAKE_CURRENT_BINARY_DIR}/spirv-remapTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/glslang/cmake)
++        install(FILES "${CMAKE_CURRENT_BINARY_DIR}/spirv-remapTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/glslang)
      endif()
  
      install(TARGETS glslang-default-resource-limits EXPORT glslang-targets)
@@ -33,6 +33,6 @@ index 0275750..e6e54ed 100644
          add_library(glslang-default-resource-limits ALIAS glslang::glslang-default-resource-limits)
      ")
 -    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/glslang-default-resource-limitsTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
-+    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/glslang-default-resource-limitsTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/glslang/cmake)
++    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/glslang-default-resource-limitsTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/glslang)
  
  endif()
