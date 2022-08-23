@@ -1,13 +1,13 @@
 From: John Zupin <johnz@lunarg.com>
 Date: Tue, 23 Jun 2020 16:13:59 -0600
-Subject: patch: SPIRV add glslang to install dirs
+Subject: patch: SPIRV add glslang to cmake install dirs
 
 ---
  SPIRV/CMakeLists.txt | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/SPIRV/CMakeLists.txt b/SPIRV/CMakeLists.txt
-index c26e310..1ab8fcc 100644
+index c26e310..1924bd3 100644
 --- a/SPIRV/CMakeLists.txt
 +++ b/SPIRV/CMakeLists.txt
 @@ -126,7 +126,7 @@ if(ENABLE_GLSLANG_INSTALL)
@@ -15,7 +15,7 @@ index c26e310..1ab8fcc 100644
              add_library(SPVRemapper ALIAS glslang::SPVRemapper)
          ")
 -        install(FILES "${CMAKE_CURRENT_BINARY_DIR}/SPVRemapperTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
-+        install(FILES "${CMAKE_CURRENT_BINARY_DIR}/SPVRemapperTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/glslang/cmake)
++        install(FILES "${CMAKE_CURRENT_BINARY_DIR}/SPVRemapperTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/glslang)
      endif()
  
      file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/SPIRVTargets.cmake" "
@@ -24,7 +24,7 @@ index c26e310..1ab8fcc 100644
          add_library(SPIRV ALIAS glslang::SPIRV)
      ")
 -    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/SPIRVTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
-+    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/SPIRVTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/glslang/cmake)
++    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/SPIRVTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/glslang)
  
      install(FILES ${HEADERS} ${SPVREMAP_HEADERS} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/glslang/SPIRV/)
  endif()
