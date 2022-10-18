@@ -1,3 +1,74 @@
+glslang (11.12.0~rc1-1lunarg20.04-1) focal; urgency=medium
+
+  [ Jeremy Hayes ]
+  * Update cmake minimum required version
+
+  [ Andrea Pappacoda ]
+  * build: install glslang-config.cmake to libdir
+
+  [ Harlen ]
+  * Fix strict aliasing violation
+
+  [ Pedro J. Estébanez ]
+  * Remove the unused OS_CleanupThreadData
+
+  [ Jeremy Hayes ]
+  * Implement NonSemantic.Shader.DebugInfo.100
+
+  [ Johannes Kauffmann ]
+  * Fix -Wundef warnings for MINGW_HAS_SECURE_API
+
+  [ Pankaj Mistry ]
+  * GL_EXT_mesh_shader/SPV_EXT_mesh_shader implementation Added following updates to GL_EXT_mesh_shader implementation:
+
+  [ ichordev ]
+  * Fixed a small grammatical error
+
+  [ sean ]
+  * Fix: Remove NV suffix from C interface
+
+  [ Qingyuan Zheng ]
+  * Fix OpLine prepending OpFunction reports wrong file when #line is present
+
+  [ Pankaj Mistry ]
+  * Fix for issue #3020
+  * Make a utility function for termination instructions that take input operands. Use the new utility function for generating OpEmitMeshTasksEXT.
+
+  [ Ralf Habacker ]
+  * cmake: Use common installation directory for cmake support files.
+  * cmake: Do not install static libraries in shared build mode.
+
+  [ Malcolm Bechard ]
+  * further updates to 67384dd18b1715
+
+  [ Ricardo Garcia ]
+  * Make gl_SubGroupARB a flat int in Vulkan
+
+  [ Jeremy Hayes ]
+  * Use DebugDeclare for local variables
+
+  [ Pankaj Mistry ]
+  * Fix for bug #3019 : That incorrectly removed perVertexEXT qualifier as arrayed IO
+
+  [ Malcolm Bechard ]
+  * only use dead input elimination on vertex shaders
+
+  [ Eric Werness ]
+  * GL_EXT_opacity_micromap
+
+  [ James0124 ]
+  * CInterface: Add preamble support.
+
+  [ Jeremy Hayes ]
+  * Update known_good.json
+  * Update CHANGES for release 11.12.0
+
+  [ John Zupin ]
+  * packaging: update patches
+  * packaging: remove usr/share directory
+
+ -- john <john@odin>  Tue, 18 Oct 2022 11:11:52 -0600
+
 glslang (11.11.0~rc5-1lunarg20.04-1) focal; urgency=medium
 
   [ John Zupin ]
