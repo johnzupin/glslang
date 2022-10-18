@@ -7,10 +7,10 @@ Subject: patch: SPIRV add glslang to cmake install dirs
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/SPIRV/CMakeLists.txt b/SPIRV/CMakeLists.txt
-index c26e310..1924bd3 100644
+index 2408e4c..18e6745 100644
 --- a/SPIRV/CMakeLists.txt
 +++ b/SPIRV/CMakeLists.txt
-@@ -126,7 +126,7 @@ if(ENABLE_GLSLANG_INSTALL)
+@@ -127,7 +127,7 @@ if(ENABLE_GLSLANG_INSTALL)
  
              add_library(SPVRemapper ALIAS glslang::SPVRemapper)
          ")
@@ -19,7 +19,7 @@ index c26e310..1924bd3 100644
      endif()
  
      file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/SPIRVTargets.cmake" "
-@@ -138,7 +138,7 @@ if(ENABLE_GLSLANG_INSTALL)
+@@ -139,7 +139,7 @@ if(ENABLE_GLSLANG_INSTALL)
  
          add_library(SPIRV ALIAS glslang::SPIRV)
      ")
