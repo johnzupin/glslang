@@ -7,14 +7,14 @@ Subject: patch: OGLCompilersDLL add glslang to cmake install path
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/OGLCompilersDLL/CMakeLists.txt b/OGLCompilersDLL/CMakeLists.txt
-index 8c0e2ba..ed1edf7 100644
+index b44cbc7..c0fb6ce 100644
 --- a/OGLCompilersDLL/CMakeLists.txt
 +++ b/OGLCompilersDLL/CMakeLists.txt
-@@ -54,6 +54,6 @@ if(ENABLE_GLSLANG_INSTALL)
+@@ -54,6 +54,6 @@ if(ENABLE_GLSLANG_INSTALL AND NOT BUILD_SHARED_LIBS)
  
          add_library(OGLCompiler ALIAS glslang::OGLCompiler)
      ")
 -    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/OGLCompilerTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
 +    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/OGLCompilerTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/glslang)
  
- endif(ENABLE_GLSLANG_INSTALL)
+ endif()
