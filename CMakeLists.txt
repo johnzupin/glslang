@@ -33,7 +33,7 @@
 
 # increase to 3.1 once all major distributions
 # include a version of CMake >= 3.1
-cmake_minimum_required(VERSION 2.8.12)
+cmake_minimum_required(VERSION 3.14.0)
 if (POLICY CMP0048)
   cmake_policy(SET CMP0048 NEW)
 endif()
@@ -375,13 +375,13 @@ if(ENABLE_GLSLANG_INSTALL)
         include("@PACKAGE_PATH_EXPORT_TARGETS@")
     ]=])
     
-    set(PATH_EXPORT_TARGETS "${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME}/glslang-targets.cmake")
+    set(PATH_EXPORT_TARGETS "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}/glslang-targets.cmake")
     configure_package_config_file(
         "${CMAKE_CURRENT_BINARY_DIR}/glslang-config.cmake.in"
         "${CMAKE_CURRENT_BINARY_DIR}/glslang-config.cmake"
         PATH_VARS
             PATH_EXPORT_TARGETS
-        INSTALL_DESTINATION ${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME}
+        INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
     )
     
     write_basic_package_version_file("${CMAKE_CURRENT_BINARY_DIR}/glslang-config-version.cmake"
@@ -392,7 +392,7 @@ if(ENABLE_GLSLANG_INSTALL)
     install(
         EXPORT      glslang-targets
         NAMESPACE   "glslang::"
-        DESTINATION "${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME}"
+        DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}"
     )
     
     install(
@@ -400,6 +400,6 @@ if(ENABLE_GLSLANG_INSTALL)
             "${CMAKE_CURRENT_BINARY_DIR}/glslang-config.cmake"
             "${CMAKE_CURRENT_BINARY_DIR}/glslang-config-version.cmake"
         DESTINATION
-            "${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME}"
+            "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}"
     )
 endif()
