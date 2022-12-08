@@ -7,7 +7,7 @@ Subject: patch: StandAlone update cmake install paths to include glslang
  1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/StandAlone/CMakeLists.txt b/StandAlone/CMakeLists.txt
-index d54a1df..f673538 100644
+index b9bac80..80a0a44 100644
 --- a/StandAlone/CMakeLists.txt
 +++ b/StandAlone/CMakeLists.txt
 @@ -116,7 +116,7 @@ if(ENABLE_GLSLANG_INSTALL)
