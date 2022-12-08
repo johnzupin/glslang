@@ -1,3 +1,54 @@
+glslang (11.13.0~rc1-1lunarg22.04-1) jammy; urgency=medium
+
+  [ Rex Xu ]
+  * Fix incorrect parse message of mesh shader
+
+  [ Rémi Verschelde ]
+  * Convert spirv.hpp line endings to LF (Unix style)
+
+  [ Graeme Leese ]
+  * Change Volatile generation for HelperInvocation
+  * Test for spv1.6 + memory model HelperInvocation
+
+  [ Try ]
+  * mesh shader: fix implicit index-array size calculation for lines and triangles
+  * update failing test-cases
+
+  [ Greg Fischer ]
+  * Improve ResourceLimits interface to be more forward compatible
+
+  [ Shahbaz Youssefi ]
+  * Fix gn build
+
+  [ Greg Fischer ]
+  * Fix include in resource_limits_c.h
+
+  [ Shahbaz Youssefi ]
+  * Remove GLSLANG_ANGLE
+
+  [ Sven-Hendrik Haase ]
+  * Fix locations of cmake files in side compat shims
+
+  [ Greg Fischer ]
+  * Update known goods
+  * Add EliminateDeadOutputStores to API.
+
+  [ Johannes Kauffmann ]
+  * Include: PoolAlloc: do not rely on CMake define
+  * Use nullptr where possible instead of NULL or 0
+
+  [ Gilad Ben-Yossef ]
+  * GL_ARM_shader_core_builtins support
+
+  [ Jeremy Hayes ]
+  * Update known_good.json
+  * Update CHANGES for release 11.13.0
+
+  [ John Zupin ]
+  * packaging: update patches
+
+ -- john <john@odin>  Thu, 08 Dec 2022 11:05:51 -0700
+
 glslang (11.12.0~rc1-1lunarg22.04-1) jammy; urgency=medium
 
   [ Jeremy Hayes ]
