@@ -26,6 +26,7 @@ Files: .gn
        build_info.h.tmpl
        build_overrides/*
        glslang/CMakeLists.txt
+       glslang/ExtensionHeaders/*
        glslang/GenericCodeGen/*
        glslang/HLSL/*
        glslang/Include/*
@@ -41,6 +42,7 @@ Files: .gn
        gtests/BuiltInResource.FromFile.cpp
        gtests/CMakeLists.txt
        gtests/Config.FromFile.cpp
+       gtests/GlslMapIO.FromFile.cpp
        gtests/Hlsl.FromFile.cpp
        gtests/Initializer.h
        gtests/Link.FromFile.Vk.cpp
@@ -52,6 +54,7 @@ Files: .gn
        gtests/Spv.FromFile.cpp
        gtests/TestFixture.cpp
        gtests/TestFixture.h
+       gtests/VkRelaxed.FromFile.cpp
        gtests/main.cpp
        gtests/pch.h
        hlsl/*
@@ -60,7 +63,7 @@ Files: .gn
        standalone.gclient
 Copyright: 2002-2005, 3Dlabs Inc. Ltd
            2017-2019, ARM Limited
-           2020, Advanced Micro Devices, Inc
+           2020-2021, Advanced Micro Devices, Inc
            2019, Google LLC
            2015-2020, Google, Inc
            2012-2017, LunarG, Inc
@@ -69,41 +72,42 @@ Copyright: 2002-2005, 3Dlabs Inc. Ltd
            2018-2020, The Khronos Group Inc
 License: BSD-3-clause
 
-Files: debian/*
-Copyright: 2021, LunarG Inc
-License: BSD-3-clause or GPL-3 or MIT
-
 Files: SPIRV/bitutils.h
        SPIRV/hex_float.h
        build_info.py
+       gen_extension_headers.py
+       gtests/Common.cpp
        gtests/HexFloat.cpp
        ndk_test/test.cpp
        parse_version.cmake
        update_glslang_sources.py
 Copyright: 2020, Google Inc
-           2018, Google LLC
+           2018-2021, Google LLC
            2020, Google, Inc
            2017, The Glslang Authors
            2015-2016, The Khronos Group Inc
 License: Apache-2
 
 Files: SPIRV/GLSL.ext.AMD.h
+       SPIRV/GLSL.ext.ARM.h
        SPIRV/GLSL.ext.EXT.h
        SPIRV/GLSL.ext.KHR.h
        SPIRV/GLSL.ext.NV.h
        SPIRV/GLSL.std.450.h
        SPIRV/NonSemanticDebugPrintf.h
+       SPIRV/NonSemanticShaderDebugInfo100.h
        SPIRV/spirv.hpp
-Copyright: 2020, Advanced Micro Devices, Inc
+Copyright: 2022, ARM Limited
+           2020, Advanced Micro Devices, Inc
            2014-2020, The Khronos Group Inc
 License: MIT/X11
 
 Files: SPIRV/CInterface/*
        StandAlone/resource_limits_c.cpp
-       StandAlone/resource_limits_c.h
        glslang/CInterface/*
        glslang/Include/glslang_c_interface.h
        glslang/Include/glslang_c_shader_types.h
+       glslang/Public/resource_limits_c.h
 Copyright: 2020, Travis Fort
            2019, Viktor Latypov
 License: BSD-2-clause
@@ -116,14 +120,36 @@ License: GPL-3+ with Bison exception
 Files: LICENSE.txt
 Copyright: <various other dates and companies>
            1984-2015, Free Software Foundation, Inc
+           2007, Free Software Foundation, Inc. <http://fsf.org/>
            2015-2018, Google, Inc
            2002, NVIDIA Corporation
-           2020, The Khronos Group Inc
+           2014-2020, The Khronos Group Inc
 License: Apache-2 or BSD-3-clause or Expat or GPL-3+ with Bison exception
 
-Files: glslang/MachineIndependent/gl_types.h
-Copyright: 2013, The Khronos Group Inc
+Files: Test/spv.debuginfo.glsl.comp
+       Test/spv.debuginfo.glsl.frag
+       Test/spv.debuginfo.glsl.geom
+       Test/spv.debuginfo.glsl.tesc
+       Test/spv.debuginfo.glsl.tese
+       Test/spv.debuginfo.glsl.vert
+       Test/spv.debuginfo.hlsl.comp
+       Test/spv.debuginfo.hlsl.frag
+       Test/spv.debuginfo.hlsl.geom
+       Test/spv.debuginfo.hlsl.tesc
+       Test/spv.debuginfo.hlsl.tese
+       Test/spv.debuginfo.hlsl.vert
+       glslang/MachineIndependent/gl_types.h
+Copyright: 2022, Google LLC
+           2022, Sascha Willems
+           2013, The Khronos Group Inc
 License: Expat
+
+Files: debian/*
+Copyright: 2023, LunarG Inc <johnz@lunarg.com>
+License: BSD-3-clause or GPL-3 or MIT
+
+License: Apache-2
+Comment: Add the corresponding license text here
 
 License: Apache-2.0
  Apache License
@@ -351,6 +377,13 @@ License: BSD-3-clause
  3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
  .
  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: Expat
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
 
 License: GPL-3
  GNU GENERAL PUBLIC LICENSE
@@ -1028,15 +1061,42 @@ License: GPL-3
  Public License instead of this License.  But first, please read
  <https://www.gnu.org/licenses/why-not-lgpl.html>.
 
-License: Expat
- Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
- .
- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
- .
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
-
 License: GPL-3+ with Bison exception
-Comment: Add the corresponding license text here
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>. */
+ .
+ /* As a special exception, you may create a larger work that contains
+ part or all of the Bison parser skeleton and distribute that work
+ under terms of your choice, so long as that work isn't itself a
+ parser generator using the skeleton or a modified version thereof
+ as a parser skeleton. Alternatively, if you modify or redistribute
+ the parser skeleton itself, you may (at your option) remove this
+ special exception, which will cause the skeleton and the resulting
+ Bison output files to be licensed under the GNU General Public
+ License without this special exception.
+ .
+ This special exception was added by the Free Software Foundation in
+ version 2.2 of Bison. */
+ .
+ /* C LALR(1) parser skeleton written by Richard Stallman, by
+ simplifying the original so-called "semantic" parser. */
+ .
+ /* All symbols defined below should begin with yy or YY, to avoid
+ infringing on user name space. This should be done even for local
+ variables, as they might otherwise be expanded by user macros.
+ There are some unavoidable exceptions within include files to
+ define necessary library symbols; they are noted "INFRINGES ON
+ USER NAME SPACE" below. */
 
 License: MIT
  Copyright <YEAR> <COPYRIGHT HOLDER>
