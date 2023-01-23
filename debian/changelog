@@ -1,3 +1,47 @@
+glslang (12.0.0~rc1-1lunarg20.04-1) focal; urgency=medium
+
+  [ Zhou ]
+  * [glslang][EXT] Support extension ARB_bindless_texture.
+
+  [ Jeremy Hayes ]
+  * Guard AppleClang linker options
+
+  [ alelenv ]
+  * Add support for GL_NV_shader_invocation_reorder. (#3054)
+  * Add support for GL_NV_shader_invocation_reorder. (#3054)
+
+  [ David Neto ]
+  * Remove the name of unused formal paramters
+
+  [ Chow ]
+  * [glslang] Refine implicit array size interfaces. (#3074)
+
+  [ Jeremy Hayes ]
+  * Remove languages from cmake project statement
+
+  [ Daniel Story ]
+  * Fix issues with MaxDualSourceDrawBuffersEXT
+
+  [ Jeremy Hayes ]
+  * Fix const parameter debug types
+  * Fix debuginfo disassembly
+
+  [ Juan Ramos ]
+  * build: Remove AMD_EXTENSIONS / NV_EXTENSIONS defines
+
+  [ Greg Fischer ]
+  * Fix crash on bad structure member reference
+
+  [ John Zupin ]
+  * packaging: debian: update copyright
+
+  [ Jeremy Hayes ]
+  * Update appveyor environment
+  * Update known_good.json
+  * Update CHANGES for release 12.0.0
+
+ -- john <john@odin>  Mon, 23 Jan 2023 11:57:38 -0700
+
 glslang (11.13.0~rc1-1lunarg20.04-1) focal; urgency=medium
 
   [ Rex Xu ]
