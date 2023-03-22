@@ -1,3 +1,73 @@
+glslang (12.1.0~rc1-1lunarg22.04-1) jammy; urgency=medium
+
+  [ Jeremy Hayes ]
+  * Update readme with upcoming branch rename
+
+  [ Amir Masoud Abdol ]
+  * Replace the deprecated $<CONFIGURATION> with $<CONFIG>
+
+  [ Arcady Goldmints-Orlov ]
+  * Reject non-float inputs/outputs with version < 120
+
+  [ Maciej ]
+  * Move check if useStorageBuffer needs to be set. From TParseContext used only by GLSL, to TParseContextBase inherited by both GLSL and HLSL paths. It caused compilations from HLSL to SPIR-V 1.3+ to use BufferBlock decoration which is no longer valid.
+
+  [ Jeremy Hayes ]
+  * Rename master to main and update news
+
+  [ rdb ]
+  * HLSL: Add missing relaxed-precision float/int matrix expansions
+
+  [ Hans Wennborg ]
+  * GLSL: Fix integer overflow warnings in Constant.cpp
+
+  [ Maciej ]
+  * Block-decorate Vulkan Structs with RuntimeArrays
+  * Add test
+
+  [ David Neto ]
+  * kokoro: avoid git permissions issue that GN fails on
+  * Use the ninja already in the docker build.
+
+  [ Jan Engelhardt ]
+  * build: set SOVERSION on all libraries
+
+  [ Randall C. O'Reilly ]
+  * change HLSL/hlslParseables.cpp to support InterlockedAdd on F=float types
+  * updated test to test atomic float add and test results
+
+  [ Moritz Heinemann ]
+  * move ResourceLimits from StandAlone to glslang dir (Fix #3064)
+
+  [ Johan Mattsson ]
+  * Fix potential NULL dereference
+  * Fix potential NULL dereference
+
+  [ Greg Fischer ]
+  * Fix installation of resource limits headers
+
+  [ Joyce ]
+  * Set token permissions to workflows (#3156)
+
+  [ Jeremy Hayes ]
+  * Fix outdated cmake conditional
+
+  [ Juan Ramos ]
+  * cmake: Remove outdated comment
+  * cmake: No need to set CMP0048/CMP0054
+
+  [ Nathan Gauër ]
+  * kokoro: always chown files after build
+
+  [ Jeremy Hayes ]
+  * Update known_good.json
+  * Update CHANGES for release 12.1.0
+
+  [ John Zupin ]
+  * packaging: debian: udpate patches
+
+ -- john <john@odin>  Wed, 22 Mar 2023 10:00:42 -0600
+
 glslang (12.0.0~rc1-1lunarg22.04-1) jammy; urgency=medium
 
   [ Zhou ]
