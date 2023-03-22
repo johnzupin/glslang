@@ -7,10 +7,10 @@ Subject: patch: update glslang cmake install path
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/glslang/CMakeLists.txt b/glslang/CMakeLists.txt
-index 7709f09..7993f51 100644
+index 7d8790c..c211ca6 100644
 --- a/glslang/CMakeLists.txt
 +++ b/glslang/CMakeLists.txt
-@@ -223,7 +223,7 @@ if(ENABLE_GLSLANG_INSTALL)
+@@ -245,7 +245,7 @@ if(ENABLE_GLSLANG_INSTALL)
                  add_library(GenericCodeGen ALIAS glslang::GenericCodeGen)
              endif()
          ")
