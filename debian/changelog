@@ -1,3 +1,116 @@
+glslang (12.2.0~rc1-1lunarg22.04-1) jammy; urgency=medium
+
+  [ Arcady Goldmints-Orlov ]
+  * Fix double expansion of macro arguments.
+
+  [ Moritz Heinemann ]
+  * Fix CMake for OSDependent install
+
+  [ Faith Ekstrand ]
+  * Add a .mailmap file
+
+  [ Arcady Goldmints-Orlov ]
+  * Refactor Builder::createTextureCall() to use std::vector
+  * Remove a redundant condition in an if statement
+
+  [ Qingyuan Zheng ]
+  * Improve line info for symbol access and assignment
+
+  [ Arcady Goldmints-Orlov ]
+  * Fix generation of conditionals with a struct result in SPIR-V
+  * Add tests for conditionals that return a struct value
+
+  [ Rex Xu ]
+  * Parameters of spirv_decorate_id should accept variables
+  * Fix an issue when we merge multiple spirv_decorate_xxx directives
+
+  [ Jeremy Hayes ]
+  * Fix DebugCompilationUnit scope
+
+  [ Moritz Heinemann ]
+  * Add option to glslangValidator to inject preamble
+  * Add more preamble tests
+
+  [ spencer-lunarg ]
+  * Improve error message of alignment offset
+
+  [ Jeremy Hayes ]
+  * Fix appveyor build worker image
+
+  [ Arcady Goldmints-Orlov ]
+  * Improve help text for the new -P option
+
+  [ Try ]
+  * fix crash in HLSL frontend
+
+  [ Arcady Goldmints-Orlov ]
+  * Add a test for empty structs in HLSL hull shaders
+
+  [ sean ]
+  * Fix: Migrate Windows CI to GitHub Actions
+
+  [ Jeremy Hayes ]
+  * Delete appveyor configuration
+
+  [ David Neto ]
+  * fix error message for vertex struct input
+
+  [ Brad Smith ]
+  * Fix building on OpenBSD when building shared libs
+
+  [ Chuang Zhu ]
+  * Use CMAKE_INSTALL_FULL_LIBDIR in compat cmake files
+
+  [ Sruthik P ]
+  * glslang: Do not link with pthread on QNX
+
+  [ juan-lunarg ]
+  * cmake: Remove explicitly setting CMAKE_EXPORT_COMPILE_COMMANDS
+  * cmake: Remove USE_CCACHE
+
+  [ Eric Werness ]
+  * GL_EXT_ray_tracing_position_fetch
+
+  [ juan-lunarg ]
+  * cmake: Don't set CMAKE_INSTALL_PREFIX
+  * ci: Test GCC on MacOS CI
+
+  [ janharaldfredriksen-arm ]
+  * Add GLSL_EXT_shader_tile_image
+
+  [ Jeremy Hayes ]
+  * Fix windows-msvc-2015-bazel CI job
+
+  [ Steven Perron ]
+  * Add windows-msvc-2019-release-bazel CI config
+
+  [ Alexey Ozeritskiy ]
+  * Use custom callbacks if they are available in 'i->callbacks'
+
+  [ Steven Perron ]
+  * Remove the windows-msvc-2015-release-bazel config
+
+  [ Ryan Harrison ]
+  * Correct ctor order to make '-Wreorder-ctor' pass
+
+  [ Arcady Goldmints-Orlov ]
+  * Enable constructor reorder warnings
+
+  [ Johannes Kauffmann ]
+  * SPIRV: hex_float: remove workaround for VS2013
+  * SPIRV: remove pre-C++11 workaround
+  * PP: remove workaround for VS2015
+  * Common.h: don't use to_string workaround on MSVC
+
+  [ Arcady Goldmints-Orlov ]
+  * Include <cstdint> header in Common.h
+
+  [ Jeremy Hayes ]
+  * Update known_good.json
+  * Update CHANGES for release 12.2.0
+
+ -- john <john@odin>  Tue, 23 May 2023 11:49:11 -0600
+
 glslang (12.1.0~rc1-1lunarg22.04-1) jammy; urgency=medium
 
   [ Jeremy Hayes ]
