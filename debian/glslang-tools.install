@@ -1,2 +1,3 @@
 usr/bin/glslangValidator
+usr/bin/glslang
 usr/bin/spirv-remap
