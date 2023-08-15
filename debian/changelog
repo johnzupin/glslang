@@ -1,3 +1,164 @@
+glslang (12.3.1+24~rc1-1lunarg22.04-1) jammy; urgency=medium
+
+  [ Arcady Goldmints-Orlov ]
+  * Add decorations to structs with buffer references
+  * Switch Bazel to c++17
+  * Switch Android.mk to use --std=c++17
+
+  [ Allan MacKinnon ]
+  * [glslang] Strip trailing whitespace
+  * glslangValidator: Exit with an error if output file cannot be written
+
+  [ Arcady Goldmints-Orlov ]
+  * CMake: Make glslang-default-resource-limits STATIC
+
+  [ Rémi Verschelde ]
+  * CMake: Use set_target_properties instead of set_property
+
+  [ rcombs ]
+  * glslang_c_interface: use valid C function prototypes
+
+  [ David Neto ]
+  * ndk-build: test Android API 24
+
+  [ Sven van Haastregt ]
+  * Fix -Wmaybe-uninitialized warnings
+
+  [ Pablo Delgado Krämer ]
+  * Fix GL_NV_shader_invocation_reorder #define typo
+
+  [ juan-lunarg ]
+  * cmake: Fix CMake 3.27 warnings
+
+  [ Jason Liu ]
+  * Fix linking error "ld: unknown option: --no-undefined" on macOS
+
+  [ Sven van Haastregt ]
+  * Fix unused parameter warning in Release builds
+
+  [ Arcady Goldmints-Orlov ]
+  * Force generateDebugInfo when non-semantic debug info is enabled
+  * Add an assert that ID operands are non-zero
+
+  [ Nathaniel Cesario ]
+  * Fix C example in README
+
+  [ Rex Xu ]
+  * Spirv_intrinsics: Add support of type specifier to spirv_type
+
+  [ Dawid Lorenz ]
+  * Add support for pre and post HLSL qualifier validation
+  * Add support for pre and post HLSL qualifier validation
+
+  [ Joyce ]
+  * Create a Security Policy (#3169)
+
+  [ Arcady Goldmints-Orlov ]
+  * Use std::call_once in spv::Parameterize()
+
+  [ Nathaniel Cesario ]
+  * build: Remove bazel build support
+
+  [ Malcolm Bechard ]
+  * Rework how auto push_constant upgrading works a bit.
+
+  [ Zeqiang Li ]
+  * Add missing initialization members for web (#3246)
+
+  [ Dawid-Lorenz-Mobica ]
+  * HLSL: support binary literals
+
+  [ Pedro Olsen Ferreira ]
+  * Fix maybe-uninitialized warning
+
+  [ Juan Ramos ]
+  * cmake: Fix Android build for r25 NDK
+
+  [ Nathaniel Cesario ]
+  * cmake: Rename glslang to glslangValidator
+
+  [ Jeremy Hayes ]
+  * Update known_good.json
+  * Update CHANGES for release 12.3.0
+
+  [ Nathaniel Cesario ]
+  * cmake: Fix symlink on Windows
+
+  [ David Neto ]
+  * Support MinGW build with Clang, not just GCC
+
+  [ Nathaniel Cesario ]
+  * web: Fix emscripten build
+
+  [ Jeremy Hayes ]
+  * Update CHANGES for release 12.3.1
+
+  [ Arcady Goldmints-Orlov ]
+  * Remove obsolete files
+
+  [ Sven van Haastregt ]
+  * Silence unused parameter warning
+
+  [ scribam ]
+  * Remove useless semicolons
+
+  [ Juan Ramos ]
+  * ci: Test Android NDK matrix combinations
+  * git: Ignore CMakeUserPresets.json
+  * Modernize linux CI
+
+  [ Sven van Haastregt ]
+  * Fix typo in error message
+
+  [ Boris Zanin ]
+  * Implement support for GL_KHR_cooperative_matrix extension
+
+  [ Ben Clayton ]
+  * Simplify PoolAlloc with use of thread_local.
+  * Deprecate InitializeDll functions
+
+  [ Arcady Goldmints-Orlov ]
+  * Remove OSDependent TLS functions
+
+  [ 画卦伏羲 ]
+  * Fix [type] command file url forward slashes issue when use mingw
+
+  [ Juan Ramos ]
+  * cmake: Raise minimum to 3.17.2
+  * ci: Test CMake minimum
+
+  [ Allan MacKinnon ]
+  * `spirv-remap`: Support outputting each SPIR-V module to a filename
+
+  [ dan sinclair ]
+  * Remove GLSLANG_WEB and GLSLANG_WEB_DEVEL
+
+  [ Arcady Goldmints-Orlov ]
+  * Remove a stray GLSLANG_WEB ifdef
+  * Remove glslang.m4
+
+  [ Tim Biermann ]
+  * respect destdir for compat symlink
+
+  [ Arcady Goldmints-Orlov ]
+  * Replace GlobalLock functions with std::mutex
+
+  [ Nathaniel Cesario ]
+  * Add emscripten build to CI
+  * Fix continuous deployment
+
+  [ Arseny Kapoulkine ]
+  * Fix interaction between GL_EXT_mesh_shader and GL_EXT_fragment_shading_rate
+
+  [ Nathaniel Cesario ]
+  * Update known_good.json
+
+  [ John Zupin ]
+  * packaging: debian: update patches
+  * packaging: debian: update to include glslang binary
+
+ -- john <john@odin>  Tue, 15 Aug 2023 15:31:06 -0600
+
 glslang (12.2.0~rc1-1lunarg22.04-1) jammy; urgency=medium
 
   [ Arcady Goldmints-Orlov ]
