@@ -7,10 +7,10 @@ Subject: patch: OSDependent/unix add glslang path to cmake install dir
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/glslang/OSDependent/Unix/CMakeLists.txt b/glslang/OSDependent/Unix/CMakeLists.txt
-index 7ed71fb..60d53a2 100644
+index f6b1c6a..3342d9e 100644
 --- a/glslang/OSDependent/Unix/CMakeLists.txt
 +++ b/glslang/OSDependent/Unix/CMakeLists.txt
-@@ -65,5 +65,5 @@ if(ENABLE_GLSLANG_INSTALL AND NOT BUILD_SHARED_LIBS)
+@@ -53,5 +53,5 @@ if(ENABLE_GLSLANG_INSTALL AND NOT BUILD_SHARED_LIBS)
  
          add_library(OSDependent ALIAS glslang::OSDependent)
      ")
