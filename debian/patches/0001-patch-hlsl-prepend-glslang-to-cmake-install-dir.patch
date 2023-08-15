@@ -7,10 +7,10 @@ Subject: patch: hlsl prepend glslang to cmake install dir
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/hlsl/CMakeLists.txt b/hlsl/CMakeLists.txt
-index 4d5f15f..c6ecd80 100644
+index 058a67b..7e195c6 100644
 --- a/hlsl/CMakeLists.txt
 +++ b/hlsl/CMakeLists.txt
-@@ -58,5 +58,5 @@ if(ENABLE_GLSLANG_INSTALL)
+@@ -60,5 +60,5 @@ if(ENABLE_GLSLANG_INSTALL)
  
          add_library(HLSL ALIAS glslang::HLSL)
      ")
