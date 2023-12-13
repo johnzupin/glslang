@@ -1,3 +1,248 @@
+glslang (13.1.1+50~rc1-1lunarg22.04-1) jammy; urgency=medium
+
+  [ Rex Xu ]
+  * Spirv_intrinsics: Remove early return in layoutTypeCheck
+
+  [ Kacper Michajłow ]
+  * Look for external SPIR-V Tools build, if not building in-tree
+
+  [ Pedro Olsen Ferreira ]
+  * [cmake] Use CMake property for symbol visibility
+
+  [ Sven van Haastregt ]
+  * cmake: Don't link SPVRemapper into glslang executable
+
+  [ Nathaniel Cesario ]
+  * Fix CI build badge
+
+  [ Joyce ]
+  * Create scorecard.yml
+  * Add badge to README.md
+
+  [ Wooyoung Kim ]
+  * extension: GL_QCOM_image_processing support
+
+  [ Jeremy Hayes ]
+  * Update CHANGES for release 13.0.0
+
+  [ Pedro Olsen Ferreira ]
+  * Fix ODR violations
+
+  [ Nathaniel Cesario ]
+  * Fix ByteAddressBuffer as function parameter
+
+  [ Joyce Brum ]
+  * Squashed changes about hash pin and dependabot
+
+  [ Ralf Habacker ]
+  * Revert "CMake: Make glslang-default-resource-limits STATIC"
+
+  [ Nathaniel Cesario ]
+  * Add GL_EXT_texture_shadow_lod support
+  * Use temporary parser for mangled names
+
+  [ Arcady Goldmints-Orlov ]
+  * cmake: add more verbose messages if SPIRV-Tools is not found
+  * kokoro: explicitly set ENABLE_OPT=0 in cmake builds
+
+  [ Nathaniel Cesario ]
+  * Fix textureOffset overload
+  * Add a generic texel fetch test
+
+  [ Joyce ]
+  * Add license to dependabot.yml
+
+  [ dependabot[bot] ]
+  * Bump actions/checkout from 3.6.0 to 4.0.0
+
+  [ dependabot[bot] ]
+  * Bump actions/upload-artifact from 3.1.2 to 3.1.3
+
+  [ Sajjad Mirza ]
+  * Emit correct nonsemantic debug info for explicitly sized types
+
+  [ Rex Xu ]
+  * Use std::variant to represent TSpirvTypeParameter
+
+  [ Nathaniel Cesario ]
+  * Fix segfault with atomic arg check
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 2.21.5 to 2.21.7
+  * Add --no-link option
+
+  [ chirsz-ever ]
+  * Improve preprocessor ouput format
+
+  [ Nathaniel Cesario ]
+  * Add ASAN integration testing
+  * Fix race condition identified by TSAN
+
+  [ dependabot[bot] ]
+  * Bump actions/checkout from 4.0.0 to 4.1.0
+
+  [ dependabot[bot] ]
+  * Bump lukka/get-cmake from 3.27.4 to 3.27.6
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 2.21.7 to 2.21.9
+
+  [ alelenv ]
+  * Add support for GL_NV_displacement_micromap.
+
+  [ Pankaj Mistry ]
+  * Clean the implementation of GL_EXT_texture_shadow_lod.
+
+  [ dependabot[bot] ]
+  * Bump lukka/get-cmake from 3.27.6 to 3.27.7
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 2.21.9 to 2.22.0
+
+  [ dependabot[bot] ]
+  * Bump ossf/scorecard-action from 2.2.0 to 2.3.0
+
+  [ Jeremy Hayes ]
+  * Update known_good.json
+
+  [ Arcady Goldmints-Orlov ]
+  * spirv: only set LocalSizeId mode when necessary
+  * spirv: don't emit invalid debuginfo for buffer references
+
+  [ Jeremy Hayes ]
+  * Update CHANGES for release 13.1.0
+
+  [ Andrew MacDonald ]
+  * Add missing initialization of `compile_only` field for SPIRV C interface
+
+  [ Jeremy Hayes ]
+  * Update CHANGES for release 13.1.1
+
+  [ dependabot[bot] ]
+  * Bump actions/setup-python from 4.7.0 to 4.7.1
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 2.22.0 to 2.22.3
+
+  [ Arcady Goldmints-Orlov ]
+  * Initialize spv_options in glslang_program_SPIRV_generate
+
+  [ dependabot[bot] ]
+  * Bump actions/checkout from 4.1.0 to 4.1.1
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 2.22.3 to 2.22.4
+
+  [ Chao Chen ]
+  * Add correct line number to OpDebugFunction and OpDebugScope for function:
+
+  [ Nathaniel Cesario ]
+  * Fix Windows GHA Tests
+
+  [ Kévin Petit ]
+  * Align spirv.hpp to SPIRV-Headers for SPV_KHR_cooperative_matrix
+
+  [ Nathaniel Cesario ]
+  * Remove debugOptions from internal classes
+
+  [ dependabot[bot] ]
+  * Bump ossf/scorecard-action from 2.3.0 to 2.3.1
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 2.22.4 to 2.22.5
+
+  [ Malcolm Bechard ]
+  * tweak error behavior for redeclared uniforms for vulkan-relaxed
+
+  [ Juan Ramos ]
+  * Use googletest version 1.14.0
+
+  [ Rex Xu ]
+  * GL_EXT_spirv_intrinsics: Fix a typo in function naming
+
+  [ Arcady Goldmints-Orlov ]
+  * Fix update_glslang_sources.py to not use distutils
+
+  [ Nathaniel Cesario ]
+  * Fix GL_ARB_shader_storage_buffer_object version
+
+  [ Rex Xu ]
+  * Add a helper applySpirvDecorate to handle spirv_decorate_xxx directives
+
+  [ Nathaniel Cesario ]
+  * Fix interpolant ES error
+
+  [ Arcady Goldmints-Orlov ]
+  * Remove GlslangToSpv.h dependency on intermediate.h
+  * Remove GlslangToSpv.h dependency on SpvTools.h
+  * Remove SPVRemapper.h dependency on spvIR.h
+  * cmake: only install public headers
+
+  [ Qingyuan Zheng ]
+  * Support NonSemantic DebugValue and generate it for const arg
+  * Fix the corrupted test because of rebase
+
+  [ “jimihe” ]
+  * Out-of-range floats should overflow/underflow to infinity/0.0
+
+  [ Moritz Heinemann ]
+  * Fix spirv-tools dependency
+
+  [ Juan Ramos ]
+  * Fix Android CI
+
+  [ Arcady Goldmints-Orlov ]
+  * Remove custom implementations of isinf and isnan
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 2.22.5 to 2.22.7
+
+  [ dependabot[bot] ]
+  * Bump actions/github-script from 6.4.1 to 7.0.1
+
+  [ Juan Ramos ]
+  * cmake: Cleanup usage of option
+  * Add iOS build to CI
+  * Cleanup MacOS CI
+  * Fix Xcode 15 linker warning
+  * Replace Darwin check with Apple check
+  * Fix unused parameter warning
+  * cmake: Remove OVERRIDE_MSVCCRT
+  * cmake: Remove find_host_package macro
+  * cmake: Cleanup ENABLE_PCH
+
+  [ FrostyLeaves ]
+  * fix: Support SV_ViewID keywords for hlsl.
+
+  [ dependabot[bot] ]
+  * Bump mymindstorm/setup-emsdk from 12 to 13
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 2.22.7 to 2.22.8
+
+  [ Moritz Heinemann ]
+  * No external install include dir
+
+  [ Nathaniel Cesario ]
+  * Fix some compiler warnings
+  * Fix conversion warnings related to bitfields
+
+  [ Juan Ramos ]
+  * cmake: Remove SPIRV-Tools workaround
+
+  [ Samuel Bourasseau ]
+  * Implement relaxed rule for opaque struct members
+
+  [ Juan Ramos ]
+  * Remove `OGLCompiler` and `HLSL` stub libraries from build
+  * Remove outdated comments about travis
+
+  [ John Zupin ]
+  * packaging: debian: update patches
+  * packaging: debian: update to allow external spirv tools
+
+ -- john <john@odin>  Wed, 13 Dec 2023 13:05:46 -0700
+
 glslang (12.3.1+24~rc1-1lunarg22.04-1) jammy; urgency=medium
 
   [ Arcady Goldmints-Orlov ]
