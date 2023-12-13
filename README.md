@@ -1,21 +1,14 @@
-Private version of glslang for Khronos-internal development.
-
-MRs to add functionality must be accompanied by simple regression tests, which are supplied with the gtests framework.
-See instructions below.
-
-1. [As discussed in #3107](https://github.com/KhronosGroup/glslang/issues/3107), the default branch of this repository is now 'main'. This change should be transparent to repository users, since github rewrites many references to the old 'master' branch to 'main'. However, if you have a checked-out local clone, you may wish to take the following steps as recommended by github:
-
-```sh
-git branch -m master main
-git fetch origin
-git branch -u origin/main main
-git remote set-head origin -a
-```
-
-2. C++17 (all platforms) and Visual Studio 2019 (Windows) are now required. This change was driven by the external dependency on SPIRV-Tools.
-
-[![appveyor status](https://ci.appveyor.com/api/projects/status/q6fi9cb0qnhkla68/branch/main?svg=true)](https://ci.appveyor.com/project/Khronoswebmaster/glslang/branch/main)
+![Continuous Integration](https://github.com/KhronosGroup/glslang/actions/workflows/continuous_integration.yml/badge.svg)
 ![Continuous Deployment](https://github.com/KhronosGroup/glslang/actions/workflows/continuous_deployment.yml/badge.svg)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/KhronosGroup/glslang/badge)](https://securityscorecards.dev/viewer/?uri=github.com/KhronosGroup/glslang)
+
+# News
+
+1. `OGLCompiler` and `HLSL` stub libraries have been fully removed from the build.
+
+2. `OVERRIDE_MSVCCRT` has been removed in favor of `CMAKE_MSVC_RUNTIME_LIBRARY`
+
+Users are encouraged to utilize the standard approach via [CMAKE_MSVC_RUNTIME_LIBRARY](https://cmake.org/cmake/help/latest/variable/CMAKE_MSVC_RUNTIME_LIBRARY.html).
 
 # Glslang Components and Status
 
@@ -107,7 +100,7 @@ branch.
 * make: _Linux_, ninja is an alternative, if configured.
 * [Python 3.x][python]: for executing SPIRV-Tools scripts. (Optional if not using SPIRV-Tools and the 'External' subdirectory does not exist.)
 * [bison][bison]: _optional_, but needed when changing the grammar (glslang.y).
-* [googletest][googletest]: needed if making any changes to glslang.
+* [googletest][googletest]: _optional_, but should use if making any changes to glslang.
 
 ### Build steps
 
@@ -118,31 +111,13 @@ shell or some other shell of your choosing.
 
 ```bash
 cd <parent of where you want glslang to be>
-git clone https://gitlab.khronos.org/GLSL/glslang.git
+git clone https://github.com/KhronosGroup/glslang.git
 ```
 
 #### 2) Check-Out External Projects
 
 ```bash
-cd <the directory glslang was cloned to, "External" will be a subdirectory>
-git clone https://github.com/google/googletest.git External/googletest
-```
-
-TEMPORARY NOTICE: additionally perform the following to avoid a current
-breakage in googletest:
-
-```bash
-cd External/googletest
-git checkout 0c400f67fcf305869c5fb113dd296eca266c9725
-cd ../..
-```
-
-If you wish to assure that SPIR-V generated from HLSL is legal for Vulkan,
-wish to invoke -Os to reduce SPIR-V size from HLSL or GLSL, or wish to run the
-integrated test suite, install spirv-tools with this:
-
-```bash
-./update_glslang_sources.py --site gitlab
+./update_glslang_sources.py
 ```
 
 #### 3) Configure

@@ -97,22 +97,19 @@ if(BUILD_TESTING)
                                    ${gtest_SOURCE_DIR}/include)
 
         if(ENABLE_OPT)
-            target_include_directories(glslangtests
-                PRIVATE ${spirv-tools_SOURCE_DIR}/include
+            target_link_libraries(glslangtests
+                PRIVATE SPIRV-Tools-opt
             )
         endif()
 
         set(LIBRARIES
-            glslang OSDependent OGLCompiler glslang
+            glslang OSDependent glslang
             SPIRV glslang-default-resource-limits)
 
         if(ENABLE_SPVREMAPPER)
             set(LIBRARIES ${LIBRARIES} SPVRemapper)
         endif()
 
-        if(ENABLE_HLSL)
-            set(LIBRARIES ${LIBRARIES} HLSL)
-        endif()
         target_link_libraries(glslangtests PRIVATE ${LIBRARIES} gmock)
 
         add_test(NAME glslang-gtests
