@@ -31,7 +31,7 @@
 # ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-find_host_package(Python3 REQUIRED)
+find_package(Python3 REQUIRED)
 
 set(GLSLANG_INTRINSIC_H          "${GLSLANG_GENERATED_INCLUDEDIR}/glslang/glsl_intrinsic_header.h")
 set(GLSLANG_INTRINSIC_PY         "${CMAKE_CURRENT_SOURCE_DIR}/../gen_extension_headers.py")
@@ -48,6 +48,11 @@ add_custom_command(
 set(SOURCES StandAlone.cpp DirStackFileIncluder.h  ${GLSLANG_INTRINSIC_H})
 
 add_executable(glslang-standalone ${SOURCES})
+if(${CMAKE_CXX_COMPILER_ID} MATCHES "GNU")
+    target_compile_options(glslang-standalone PRIVATE -Wconversion)
+elseif(${CMAKE_CXX_COMPILER_ID} MATCHES "Clang" AND NOT MSVC)
+    target_compile_options(glslang-standalone PRIVATE -Wshorten-64-to-32)
+endif()
 set_property(TARGET glslang-standalone PROPERTY FOLDER tools)
 set_property(TARGET glslang-standalone PROPERTY OUTPUT_NAME glslang)
 glslang_set_link_args(glslang-standalone)
@@ -57,10 +62,6 @@ set(LIBRARIES
     OSDependent
     SPIRV
     glslang-default-resource-limits)
-
-if(ENABLE_SPVREMAPPER)
-    set(LIBRARIES ${LIBRARIES} SPVRemapper)
-endif()
 
 if(WIN32)
     set(LIBRARIES ${LIBRARIES} psapi)
@@ -72,21 +73,14 @@ endif()
 
 target_link_libraries(glslang-standalone ${LIBRARIES})
 target_include_directories(glslang-standalone PUBLIC
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../External>
-    $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/External>)
-
-if(ENABLE_OPT)
-    target_include_directories(glslang-standalone
-        PRIVATE ${spirv-tools_SOURCE_DIR}/include
-    )
-endif()
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../External>)
 
 if(ENABLE_SPVREMAPPER)
     set(REMAPPER_SOURCES spirv-remap.cpp)
     add_executable(spirv-remap ${REMAPPER_SOURCES})
     set_property(TARGET spirv-remap PROPERTY FOLDER tools)
     glslang_set_link_args(spirv-remap)
-    target_link_libraries(spirv-remap ${LIBRARIES})
+    target_link_libraries(spirv-remap SPVRemapper ${LIBRARIES})
 endif()
 
 if(WIN32)
