@@ -3,17 +3,17 @@ Date: Tue, 23 Jun 2020 16:01:35 -0600
 Subject: patch: hlsl prepend glslang to cmake install dir
 
 ---
- hlsl/CMakeLists.txt | 2 +-
+ glslang/OSDependent/Windows/CMakeLists.txt | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/hlsl/CMakeLists.txt b/hlsl/CMakeLists.txt
-index 058a67b..7e195c6 100644
---- a/hlsl/CMakeLists.txt
-+++ b/hlsl/CMakeLists.txt
-@@ -60,5 +60,5 @@ if(ENABLE_GLSLANG_INSTALL)
+diff --git a/glslang/OSDependent/Windows/CMakeLists.txt b/glslang/OSDependent/Windows/CMakeLists.txt
+index c9d404a..86752be 100644
+--- a/glslang/OSDependent/Windows/CMakeLists.txt
++++ b/glslang/OSDependent/Windows/CMakeLists.txt
+@@ -64,5 +64,5 @@ if(ENABLE_GLSLANG_INSTALL)
  
-         add_library(HLSL ALIAS glslang::HLSL)
+         add_library(OSDependent ALIAS glslang::OSDependent)
      ")
--    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/HLSLTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
-+    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/HLSLTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/glslang)
+-    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/OSDependentTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
++    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/OSDependentTargets.cmake" DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/glslang)
  endif()
