@@ -1,3 +1,127 @@
+glslang (14.0.0~rc2-1lunarg22.04-1) jammy; urgency=medium
+
+  [ Nathaniel Cesario ]
+  * Use C++ containers for builtin versioning
+  * Fix MinGW build
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.22.11 to 3.22.12
+
+  [ Sajjad Mirza ]
+  * Emit DebugTypePointer when non-semantic debug info is enabled
+
+  [ jimihem ]
+  * support GL_ARB_texture_multisample extension.
+  * The array size of gl_SampleMask and gl_SampleMaskIn is ceil(gl_MaxSamples/32)
+
+  [ dependabot[bot] ]
+  * Bump hendrikmuhs/ccache-action from 1.2.10 to 1.2.11
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.22.12 to 3.23.0
+
+  [ dependabot[bot] ]
+  * Bump actions/upload-artifact from 4.0.0 to 4.1.0
+
+  [ Arcady Goldmints-Orlov ]
+  * cmake: remove generation of deprecated *Targets.cmake files
+
+  [ dependabot[bot] ]
+  * Bump mymindstorm/setup-emsdk from 13 to 14
+
+  [ dependabot[bot] ]
+  * Bump actions/upload-artifact from 4.1.0 to 4.2.0
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.23.0 to 3.23.1
+
+  [ Jeff Bolz ]
+  * Implement GL_EXT_maximal_reconvergence
+  * Fix 'maximally_reconverges' token to match the GLSL spec
+
+  [ Younggwan Kim ]
+  * SPV: Complete OpAssumeTrueKHR, OpExpectKHR
+
+  [ laddoc ]
+  * Support extension EXT_shader_quad_control
+  * Fix build issue.
+  * Fix build issue.
+  * Update dependent repo's commits points.
+  * Update test output typo.
+
+  [ dependabot[bot] ]
+  * Bump actions/upload-artifact from 4.2.0 to 4.3.0
+
+  [ dependabot[bot] ]
+  * Bump hendrikmuhs/ccache-action from 1.2.11 to 1.2.12
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.23.1 to 3.23.2
+
+  [ Alexandre Bouvier ]
+  * cmake: add missing SPIRV-Tools-opt dependency
+
+  [ dependabot[bot] ]
+  * Bump lukka/get-cmake from 3.28.1 to 3.28.2
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.23.2 to 3.24.0
+
+  [ Sven van Haastregt ]
+  * Add GL_KHR_shader_subgroup_rotate support
+
+  [ Qingyuan Zheng ]
+  * Clean up the debug line info tracking and generation.
+
+  [ dependabot[bot] ]
+  * Bump lukka/get-cmake from 3.28.2 to 3.28.3
+
+  [ dependabot[bot] ]
+  * Bump actions/upload-artifact from 4.3.0 to 4.3.1
+
+  [ David Neto ]
+  * Allow external control of whether Glslang will be tested or installed
+
+  [ Sven van Haastregt ]
+  * Add GL_EXT_expect_assume support
+
+  [ Jeff Bolz ]
+  * NV_shader_atomic_fp16_vector
+  * Add a string 'StartsWith' helper function
+
+  [ Sajjad Mirza ]
+  * Emit debug info for accelerationStructure and rayQuery variables. (#3502)
+
+  [ Bjorn ]
+  * Clear spirv vector before generating spirv output
+
+  [ Chris Djali ]
+  * Document that the only supported dependency commits are the ones in known_good.json
+
+  [ AnyOldName3 ]
+  * -Wmissing-field-initializers fixes
+  * Quote paths in runtest
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.24.0 to 3.24.3
+
+  [ Chris Djali ]
+  * Remove implicit fallthrough (#3518)
+
+  [ Arcady Goldmints-Orlov ]
+  * Use [[fallthrough]] attribute instead of comments.
+  * Add extra break statements to quiet clang warnings.
+  * Refactor reflection.cpp to silence fallthrough warnings
+  * cmake: Enable implicit fallthrough warnings for gcc and clang
+
+  [ Jeff Bolz ]
+  * Change fp16_vector_atomic to not require other SPIR-V atomic extensions
+
+  [ John Zupin ]
+  * packaging: debian: updated patches
+
+ -- john <john@odin>  Wed, 28 Feb 2024 09:37:35 -0700
+
 glslang (14.0.0~rc1-1lunarg22.04-1) jammy; urgency=medium
 
   [ Nathaniel Cesario ]
