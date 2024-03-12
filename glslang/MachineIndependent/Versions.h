@@ -221,6 +221,7 @@ const char* const E_GL_EXT_draw_instanced                   = "GL_EXT_draw_insta
 const char* const E_GL_EXT_texture_array                    = "GL_EXT_texture_array";
 const char* const E_GL_EXT_maximal_reconvergence            = "GL_EXT_maximal_reconvergence";
 const char* const E_GL_EXT_expect_assume                    = "GL_EXT_expect_assume";
+const char* const E_GL_EXT_control_flow_attributes2         = "GL_EXT_control_flow_attributes2";
 
 // Arrays of extensions for the above viewportEXTs duplications
 
@@ -241,6 +242,7 @@ const int Num_OVR_multiview_EXTs = sizeof(OVR_multiview_EXTs) / sizeof(OVR_multi
 // #line and #include
 const char* const E_GL_GOOGLE_cpp_style_line_directive          = "GL_GOOGLE_cpp_style_line_directive";
 const char* const E_GL_GOOGLE_include_directive                 = "GL_GOOGLE_include_directive";
+const char* const E_GL_ARB_shading_language_include             = "GL_ARB_shading_language_include";
 
 const char* const E_GL_AMD_shader_ballot                        = "GL_AMD_shader_ballot";
 const char* const E_GL_AMD_shader_trinary_minmax                = "GL_AMD_shader_trinary_minmax";
