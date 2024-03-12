@@ -1,3 +1,35 @@
+glslang (14.1.0~rc1-1lunarg22.04-1) jammy; urgency=medium
+
+  [ Pavel Asyutchenko ]
+  * Fix HLSL built-in passthrough via inout
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.24.3 to 3.24.5
+
+  [ Nathaniel Cesario ]
+  * Add support for GL_ARB_shading_language_include
+
+  [ Jeremy Hayes ]
+  * Fix debug info file and source strings
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.24.5 to 3.24.6
+
+  [ Wooyoung Kim ]
+  * GL_EXT_control_flow_attributes2 support. (#3531)
+
+  [ Jeremy Hayes ]
+  * Increase TStorageQualifier bitfield width
+
+  [ Sharo ]
+  * Add flags for outputting absolute paths for messages (#3467)
+
+  [ Jeremy Hayes ]
+  * Update known_good.json
+  * Update CHANGES for release 14.1.0
+
+ -- john <john@odin>  Tue, 12 Mar 2024 09:44:49 -0600
+
 glslang (14.0.0~rc2-1lunarg22.04-1) jammy; urgency=medium
 
   [ Nathaniel Cesario ]
