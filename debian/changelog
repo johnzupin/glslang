@@ -1,3 +1,53 @@
+glslang (14.1.0+16~rc1-1lunarg22.04-1) jammy; urgency=medium
+
+  [ Steve Urquhart ]
+  * Support files with UTF8BOM character
+
+  [ dependabot[bot] ]
+  * Bump actions/checkout from 4.1.1 to 4.1.2
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.24.6 to 3.24.7
+
+  [ Arcady Goldmints-Orlov ]
+  * build: fix CI sanitizer failures
+
+  [ Wooyoung Kim ]
+  * Support for SPV_QCOM_image_processing2 (#3539)
+
+  [ Rex Xu ]
+  * Fix issues of the interaction between cooperative_matrix and spirv_intrinsics
+  * Fix an issue of getExtBuiltins()
+
+  [ dependabot[bot] ]
+  * Bump lukka/get-cmake from 3.28.3 to 3.29.0
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.24.7 to 3.24.9
+
+  [ Samuel Bourasseau ]
+  * Branch out of relaxed rules on opaque arguments declared at top-level (#3558)
+
+  [ Arcady Goldmints-Orlov ]
+  * Check for exponent overflow in float parser
+
+  [ “jimihe” ]
+  * Add a test for floating point exponent overflow
+
+  [ dependabot[bot] ]
+  * Bump actions/setup-python from 5.0.0 to 5.1.0
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.24.9 to 3.24.10
+
+  [ dependabot[bot] ]
+  * Bump lukka/get-cmake from 3.29.0 to 3.29.1
+
+  [ Herman Semenov ]
+  * Maximum optimization inserts using reserve() for operands
+
+ -- john <john@odin>  Mon, 22 Apr 2024 16:08:10 -0600
+
 glslang (14.1.0~rc1-1lunarg22.04-1) jammy; urgency=medium
 
   [ Pavel Asyutchenko ]
