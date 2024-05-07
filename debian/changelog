@@ -1,3 +1,68 @@
+glslang (14.2.0~rc1-1lunarg22.04-1) jammy; urgency=medium
+
+  [ alan-baker ]
+  * Prevent duplicate SPIR-V decorations (#3570)
+
+  [ David Neto ]
+  * Adjust hlsl infinity-constant test
+
+  [ Arcady Goldmints-Orlov ]
+  * Update the README-spirv-remap.txt
+
+  [ dependabot[bot] ]
+  * Bump lukka/get-cmake from 3.29.1 to 3.29.2
+
+  [ Pavel Asyutchenko ]
+  * Better follow HLSL offsets rules (#3575)
+
+  [ jimihem ]
+  *  index outside gl_SampleMask range, compiler need report error. (#3556)
+
+  [ dependabot[bot] ]
+  * Bump actions/checkout from 4.1.2 to 4.1.3
+
+  [ dependabot[bot] ]
+  * Bump actions/upload-artifact from 4.3.1 to 4.3.2
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.24.10 to 3.25.1
+
+  [ Pavel Asyutchenko ]
+  * Keep vec1.x l-value in HLSL
+
+  [ Herman Semenov ]
+  * Using reserve() in GlslangToSpv
+
+  [ Wooyoung Kim ]
+  * A couple of fixes to the GL_QCOM_image_processing2 support (#3578)
+
+  [ assiduous ]
+  * readme: added a note about STACK_SIZE Emscripten compiler setting
+
+  [ Arcady Goldmints-Orlov ]
+  * Increase the TIntermediate::usedIo array
+
+  [ jimihem ]
+  * location aliasing (#3438)
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.25.1 to 3.25.3
+
+  [ dependabot[bot] ]
+  * Bump actions/upload-artifact from 4.3.2 to 4.3.3
+
+  [ dependabot[bot] ]
+  * Bump hendrikmuhs/ccache-action from 1.2.12 to 1.2.13
+
+  [ David Neto ]
+  * Update validation results of SPV_QCOM_image_processing2
+
+  [ Jeremy Hayes ]
+  * Update known_good.json
+  * Update CHANGES for 14.2.0
+
+ -- john <john@odin>  Tue, 07 May 2024 08:24:49 -0600
+
 glslang (14.1.0+16~rc1-1lunarg22.04-1) jammy; urgency=medium
 
   [ Steve Urquhart ]
