@@ -1,3 +1,94 @@
+glslang (14.3.0~rc1-1lunarg24.04-1) noble; urgency=medium
+
+  [ dependabot[bot] ]
+  * Bump actions/checkout from 4.1.3 to 4.1.4
+
+  [ Pavel Rojtberg ]
+  * add back layoutLocation to public API
+
+  [ dependabot[bot] ]
+  * Bump lukka/get-cmake from 3.29.2 to 3.29.3
+
+  [ dependabot[bot] ]
+  * Bump ossf/scorecard-action from 2.3.1 to 2.3.3
+
+  [ dependabot[bot] ]
+  * Bump actions/checkout from 4.1.4 to 4.1.5
+
+  [ Arcady Goldmints-Orlov ]
+  * ci: Add testing on Mac OS 14 instead of 12
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.25.3 to 3.25.5
+
+  [ dependabot[bot] ]
+  * Bump actions/checkout from 4.1.5 to 4.1.6
+
+  [ arcady-lunarg ]
+  * spirv: Add a postprocessing pass to fix up uses of OpSampledImage
+
+  [ Max Andersson ]
+  * Make gl_HitT proper aliases of gl_RayTmax
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.25.5 to 3.25.6
+
+  [ Philippe SWARTVAGHER ]
+  * Fix few typos
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.25.6 to 3.25.7
+
+  [ Jeff Bolz ]
+  * Reuse loads generated for repeated function arguments
+  * Generate SPV_EXT_replicated_composites when requested by pragma.
+
+  [ Arcady Goldmints-Orlov ]
+  * Add support for OpExtInstWithForwardRefs
+  * Emit debug info for buffer references
+  * Add the KHR suffix for OpExtInstWithForwardRefsKHR instruction
+
+  [ dependabot[bot] ]
+  * Bump lukka/get-cmake from 3.29.3 to 3.29.5
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.25.7 to 3.25.8
+
+  [ Pedro Olsen Ferreira ]
+  * Add support for the ARM extended matrix layout
+
+  [ AnyOldName3 ]
+  * Add aliases for the public libraries
+
+  [ Qingyuan Zheng ]
+  * Add includer to gtest for include file tests.
+
+  [ Arcady Goldmints-Orlov ]
+  * Move the spv.debugInfo.frag test back into runtests
+
+  [ Romaric Jodin ]
+  * Update known_good.json
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.25.8 to 3.25.10
+
+  [ dependabot[bot] ]
+  * Bump actions/checkout from 4.1.6 to 4.1.7
+
+  [ RP Singh ]
+  * Skip identity conversions for 8-bit and 16-bit types (#3622)
+
+  [ Arcady Goldmints-Orlov ]
+  * Add test cases for redundant type conversions
+  * Generate vector constructions more efficiently when sizes match
+  * refactor: Make type component/constituent counts unsigned
+
+  [ Jeremy Hayes ]
+  * Update known_good.json
+  * Update CHANGES for 14.3.0
+
+ -- john <john@odin>  Tue, 16 Jul 2024 11:14:27 -0600
+
 glslang (14.2.0~rc1-1lunarg22.04-1) jammy; urgency=medium
 
   [ alan-baker ]
