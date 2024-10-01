@@ -1,3 +1,230 @@
+glslang (15.0.0~rc1-1lunarg22.04-1) jammy; urgency=medium
+
+  [ dependabot[bot] ]
+  * Bump lukka/get-cmake from 3.29.5 to 3.29.6
+
+  [ Antoine ]
+  * Adding the preprocessor value DISABLE_THREAD_SUPPORT to allow compilation of glslang without thread support for WASI.
+  * Auto-detect WASI platform
+
+  [ Steven Perron ]
+  * Don't emit duplicate decorations. (#3635)
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.25.10 to 3.25.11
+
+  [ Qingyuan Zheng ]
+  * Fill correct file name to OpDebugFunction and add line info for parameters' OpDebugDeclare
+  * Fix function call line number for calls spanning multiple lines.
+
+  [ Mason Remaley ]
+  * Fixes undefined behavior due to unspecified enum backing
+
+  [ friendlyanon ]
+  * Fix `glslangValidator` installation
+
+  [ David Neto ]
+  * kokoro: use Python 3.12 for Linux builds
+
+  [ dependabot[bot] ]
+  * Bump actions/upload-artifact from 4.3.3 to 4.3.4
+
+  [ Arcady Goldmints-Orlov ]
+  * Update macOS requirement from 11 to 12 in github CD workflow
+
+  [ dependabot[bot] ]
+  * Bump lukka/get-cmake from 3.29.6 to 3.30.0
+
+  [ Malcolm Bechard ]
+  * fix crash when atomicCounter() with no args is used.
+
+  [ dependabot[bot] ]
+  * Bump actions/setup-python from 5.1.0 to 5.1.1
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.25.11 to 3.25.12
+
+  [ jimihem ]
+  * Support constant expression calculated by matrixCompMult.
+
+  [ arcady-lunarg ]
+  * Fix undefined behaviors caught by ubsan
+
+  [ jimihem ]
+  * Add more location aliasing checks
+
+  [ Antoine ]
+  * Add column to location logs
+
+  [ Arcady Goldmints-Orlov ]
+  * Add some comments and rename a helper function
+  * Don't emit debug instructions before an OpPhi
+
+  [ dependabot[bot] ]
+  * Bump lukka/get-cmake from 3.30.0 to 3.30.1
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.25.12 to 3.25.13
+
+  [ Andrei Alexeyev ]
+  * Expose setGlobalUniform* methods to the C API
+
+  [ Yamamoto Kazunari ]
+  * Fix missing calls to SetThreadPoolAllocator() in TProgram public interface functions
+
+  [ Steve Urquhart ]
+  * Add C interface glslang::Version counterpart and version getter function
+  * Add C interface function to set preprocessed shader code
+  * Add C interface types and functions for IO mapping
+
+  [ dependabot[bot] ]
+  * Bump ossf/scorecard-action from 2.3.3 to 2.4.0
+
+  [ Pavel Asyutchenko ]
+  * Fix HLSL offsets for non-cbuffers (#3668)
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.25.13 to 3.25.15
+
+  [ Malcolm Bechard ]
+  * add cross-stage check for missing outputs
+
+  [ Arcady Goldmints-Orlov ]
+  * Add SPIRV/SpvTools.h back to the public headers
+
+  [ Malcolm Bechard ]
+  * add optimizerAllowExpandedIDBound to SpvOptions
+
+  [ ravi688 ]
+  * Update comment to more succint that 8/16-bit composites can't be directly constructed Earlier the comment looked misleading that composites of 8/16-bit types can't be constructed at all. As per the GL_EXT_shader_16bit_storage extension, they can't be constructed directly, however, can be constructed indirectly.
+
+  [ Arcady Goldmints-Orlov ]
+  * ci: Add a list of known validation fails
+
+  [ Sergei Trofimovich ]
+  * SPIRV/SpvBuilder.h: add missing <cstdint> include
+
+  [ dependabot[bot] ]
+  * Bump actions/upload-artifact from 4.3.4 to 4.3.5
+
+  [ Arcady Goldmints-Orlov ]
+  * Clean up iomapper.h to make it suitable as a public API
+  * Add MachineIndependent/iomapper.h to the list of installed headers.
+  * Fix initialization of arrays in TGlslIoMapper
+  * Remove execute permissions from source files.
+
+  [ dTry ]
+  * Add type checks for hitObjectNV (#3689)
+
+  [ Arcady Goldmints-Orlov ]
+  * Add setSourceFile and addSourceText to TShader
+
+  [ dependabot[bot] ]
+  * Bump hendrikmuhs/ccache-action from 1.2.13 to 1.2.14
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.25.15 to 3.26.0
+
+  [ dependabot[bot] ]
+  * Bump lukka/get-cmake from 3.30.1 to 3.30.2
+  * ci: Get rid of redundant testing
+
+  [ Daniel Story ]
+  * Merge ancillary libraries into main glslang library and stub originals
+
+  [ Arcady Goldmints-Orlov ]
+  * Fix typo in Android.mk
+
+  [ dependabot[bot] ]
+  * Bump actions/upload-artifact from 4.3.5 to 4.3.6
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.26.0 to 3.26.2
+  * Clean up unused includes.
+  * Move definition of GLSLANG_EXPORT to visibility.h
+  * Add visibility.h to build scripts
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.26.2 to 3.26.5
+
+  [ Matthew Moulton ]
+  * Apply GLSL memory decorations to top-level OpVariable
+
+  [ Arcady Goldmints-Orlov ]
+  * cmake: Fix dependencies of newly-stubbed libraries
+  * Fix test results after merging #3662
+
+  [ dependabot[bot] ]
+  * Bump lukka/get-cmake from 3.30.2 to 3.30.3
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.26.5 to 3.26.6
+
+  [ dependabot[bot] ]
+  * Bump actions/setup-python from 5.1.1 to 5.2.0
+
+  [ U-NVIDIA.COM\rjennings ]
+  * PP: Don't report certain error about '#' when #if'd out
+
+  [ Arcady Goldmints-Orlov ]
+  * Add symbol visibility annotations to symbols in SPIRV/
+
+  [ Qingyuan Zheng ]
+  * Sanitize debug source location tracking for implicit branch and return This patch tries to attach debug location of a branch/return instruction to its predecessor or the closing brace. If none could be found, no debug info should be emitted.
+
+  [ Arcady Goldmints-Orlov ]
+  * ci: Remove redundant testing from continuous deployment workflow
+
+  [ dependabot[bot] ]
+  * Bump actions/upload-artifact from 4.3.6 to 4.4.0
+  * Remove redundant calls to spv::Parameterize() from tests
+  * Convert keyword maps to static initializers
+
+  [ Jeff Bolz ]
+  * Add tests for compute shader derivatives with spec constant workgroup size
+  * Allow compute derivative modes when the workgroup dimensions are spec constants
+
+  [ Arcady Goldmints-Orlov ]
+  * Add symbol visibility annotations to glslang-resource-limits library
+  * Explicitly export symbols from libSPVRemapper
+  * Revert "Add MachineIndependent/iomapper.h to the list of installed headers."
+  * Add an interface to get the GLSL IO mapper and resolver
+  * Update tests to use the new iomapper interface
+
+  [ Andrei Alexeyev ]
+  * Expose setResourceSetBinding() method to the C API
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.26.6 to 3.26.7
+
+  [ Yuxin Hu ]
+  * Fix gn build error
+
+  [ Arcady Goldmints-Orlov ]
+  * Final round of symbol visibility fixes
+  * cmake: Fix symbol visibility on Linux.
+  * Add CI testing for shared library builds
+
+  [ Shahbaz Youssefi ]
+  * Fix SPIR-V support in GN build
+
+  [ Jeremy Hayes ]
+  * Update known_good.json
+
+  [ Arcady Goldmints-Orlov ]
+  * Print an error when SPIR-V is requested and ENABLE_SPIRV=0 is set
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.26.7 to 3.26.8
+
+  [ Malcolm Bechard ]
+  * a few more tweaks for #3681
+
+  [ Jeremy Hayes ]
+  * Update CHANGES for 15.0.0
+
+ -- john <john@odin>  Tue, 01 Oct 2024 09:33:36 -0600
+
 glslang (14.3.0~rc1-1lunarg22.04-1) jammy; urgency=medium
 
   [ dependabot[bot] ]
