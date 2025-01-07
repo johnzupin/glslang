@@ -1,3 +1,137 @@
+glslang (15.1.0-2~rc3-1lunarg22.04-1) jammy; urgency=medium
+
+  [ Jeff Bolz ]
+  * Fix nonsemantic debuginfo line attribution for cooperative matrix
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.26.8 to 3.26.9
+
+  [ dependabot[bot] ]
+  * Bump actions/checkout from 4.1.7 to 4.2.0
+
+  [ Sven van Haastregt ]
+  * Remove extra semicolons
+
+  [ Arcady Goldmints-Orlov ]
+  * Propagate errors from symbol table init
+
+  [ Sajjad Mirza ]
+  * Use line and column from node on DebugLexicalBlock.
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.26.9 to 3.26.11
+
+  [ dependabot[bot] ]
+  * Bump lukka/get-cmake from 3.30.3 to 3.30.4
+
+  [ Daniel Story ]
+  * Implement optional link-time cross stage optimization
+  * Add link-time cross stage optimization test
+
+  [ Sven van Haastregt ]
+  * Fix Wformat warnings for printf `%p`
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.26.11 to 3.26.12
+
+  [ dependabot[bot] ]
+  * Bump lukka/get-cmake from 3.30.4 to 3.30.5
+
+  [ dependabot[bot] ]
+  * Bump actions/upload-artifact from 4.4.0 to 4.4.3
+
+  [ Charles Giessen ]
+  * Update to macOS-13 in github actions runners
+
+  [ dependabot[bot] ]
+  * Bump actions/checkout from 4.2.0 to 4.2.1
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.26.12 to 3.26.13
+
+  [ Ronny Chan ]
+  * Emit `OpModfStruct` for GLSL `EOpModf` instead of `OpModf`
+
+  [ dependabot[bot] ]
+  * Bump actions/checkout from 4.2.1 to 4.2.2
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.26.13 to 3.27.0
+
+  [ dependabot[bot] ]
+  * Bump actions/setup-python from 5.2.0 to 5.3.0
+
+  [ lauren n. liberda ]
+  * python 3.12: remove deprecated datetime.utcfromtimestamp
+
+  [ Jeff Bolz ]
+  * Implement GLSL_NV_cooperative_matrix2
+
+  [ Yuxin Hu ]
+  * Add missing <sstream> header include
+
+  [ Christopher Degawa ]
+  * disassemble: Add cstdint for uint32_t
+
+  [ spencer-lunarg ]
+  * Add warning if Forward Declaration uses layout qualifiers
+  * Add Test for Forward Declaration warning
+
+  [ Jeff Bolz ]
+  * Replace individual EOpConv<A>To<B> with a single EOpConvNumeric
+
+  [ dependabot[bot] ]
+  * Bump lukka/get-cmake from 3.30.5 to 3.31.0
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.27.0 to 3.27.1
+
+  [ rj123-nv ]
+  * Fix printing of 'unknown stage' during crossStageCheck
+
+  [ Juan Ramos ]
+  * Cleanup old CMake related docs in readme.md
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.27.1 to 3.27.4
+
+  [ Malcolm Bechard ]
+  * Improve auto push_constants upgrading.
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.27.4 to 3.27.5
+
+  [ Arcady Goldmints-Orlov ]
+  * ci: Remove gcc from macos matrix
+
+  [ David Neto ]
+  * Add Vulkan 1.4 target and client
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.27.5 to 3.27.6
+
+  [ dependabot[bot] ]
+  * Bump lukka/get-cmake from 3.31.0 to 3.31.2
+
+  [ Jeremy Hayes ]
+  * Fix Windows DLL test configuration
+  * Update known_good.json
+  * Update CHANGES for 15.1.0
+
+  [ Alexandre Bouvier ]
+  * cmake: fix linking of stubbed libraries
+
+  [ Jeremy Hayes ]
+  * Re-add linux back compat test
+
+  [ John Zupin ]
+  * packaging: debian: update copyright
+  * packaging: debian: add shared libs to glslang package
+  * packaging: debian: run dh_auto_configure twice
+  * packaging: debian: disable building any tests
+
+ -- john <john@odin>  Tue, 07 Jan 2025 15:03:31 -0700
+
 glslang (15.0.0~rc1-1lunarg22.04-1) jammy; urgency=medium
 
   [ dependabot[bot] ]
