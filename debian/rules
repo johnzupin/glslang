@@ -22,14 +22,14 @@ export DH_VERBOSE = 1
 # This is example for Cmake (See https://bugs.debian.org/641051 )
 override_dh_auto_configure:
 	dh_auto_configure -- -DCMAKE_LIBRARY_PATH=$(DEB_HOST_MULTIARCH) \
-			     -DBUILD_TESTING=OFF \
+			     -DGLSLANG_TESTS="OFF" \
 			     -DALLOW_EXTERNAL_SPIRV_TOOLS="ON" \
 			     -DBUILD_SHARED_LIBS="ON"
 
 override_dh_auto_install:
 	dh_auto_install
 	dh_auto_configure -- -DCMAKE_LIBRARY_PATH=$(DEB_HOST_MULTIARCH) \
-			     -DBUILD_TESTING=OFF \
+			     -DGLSLANG_TESTS="OFF" \
 			     -DALLOW_EXTERNAL_SPIRV_TOOLS="ON" \
 			     -DBUILD_SHARED_LIBS="OFF"
 	dh_auto_build
