@@ -1,3 +1,10 @@
+glslang (15.1.0-2~rc4-1lunarg22.04-1) jammy; urgency=medium
+
+  [ John Zupin ]
+  * packaging: debian: update to include spirv-tools as build dep
+
+ -- john <john@odin>  Thu, 16 Jan 2025 11:13:12 -0700
+
 glslang (15.1.0-2~rc3-1lunarg22.04-1) jammy; urgency=medium
 
   [ Jeff Bolz ]
