@@ -4,7 +4,8 @@ Priority: optional
 Maintainer: John Zupin <johnz@lunarg.com>
 Build-Depends: debhelper (>= 10),
  cmake,
- python3
+ python3,
+ spirv-tools
 Standards-Version: 4.1.2
 Homepage: https://github.com/KhronosGroup/glslang
 Vcs-Git: https://github.com/KhronosGroup/glslang
