@@ -1,3 +1,146 @@
+glslang (15.1.0-59~rc1-1lunarg22.04-1) jammy; urgency=medium
+
+  [ Eilif Swensen ]
+  * Remove incorrect extension dependency from 16bit float Modf
+
+  [ dependabot[bot] ]
+  * Bump lukka/get-cmake from 3.31.2 to 3.31.3
+
+  [ dependabot[bot] ]
+  * Bump actions/upload-artifact from 4.4.3 to 4.5.0
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.27.6 to 3.28.0
+
+  [ danginsburg ]
+  * Fixes #3826 - Add support for OpTypeRayQueryKHR and OpTypeAccelerationStructureKHR to SPVRemapper
+
+  [ Takuto Ikuta ]
+  * Add missing include headers
+
+  [ Jeff Bolz ]
+  * Support EXT_integer_dot_product
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.28.0 to 3.28.1
+
+  [ dependabot[bot] ]
+  * Bump actions/upload-artifact from 4.5.0 to 4.6.0
+
+  [ dependabot[bot] ]
+  * Bump lukka/get-cmake from 3.31.3 to 3.31.4
+
+  [ Jeremy Hayes ]
+  * Change warning to error if spirv-tools not found
+  * Revert "add cross-stage check for missing outputs"
+
+  [ dependabot[bot] ]
+  * Bump hendrikmuhs/ccache-action from 1.2.14 to 1.2.16
+  * Update cmake_minimum_required
+
+  [ Ricardo Garcia ]
+  * Add support for GL_EXT_texture_offset_non_const
+  * Check argument constness with SparseTextureOffset functions
+  * Update SPIRV-Tools known good version
+
+  [ David Neto ]
+  * kokoro: upgrade from clang 10 to clang 13
+  * kokoro: use gcc-13
+
+  [ Alan Baker ]
+  * Update SPIRV-Tools
+  * Update test expectations
+  * update validation_fails.txt
+
+  [ dependabot[bot] ]
+  * Bump lukka/get-cmake from 3.31.4 to 3.31.5
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.28.1 to 3.28.5
+
+  [ Matt Borgerson ]
+  * Fix glslang_glsl_mapper_create prototype
+
+  [ David Neto ]
+  * kokoro: use ndk-r27c
+
+  [ Jeff Bolz ]
+  * Implement GL_NV_cooperative_vector
+
+  [ alelenv ]
+  * Add support for GL_NV_cluster_acceleration_structure.
+
+  [ Karen Webb ]
+  * Add `nontemporal` qualifier to GLSL
+  * Correct value of Spv 1.6 constant
+  * Remove wild edit from clangd
+  * Make Nontemporal strict when passing to a function
+  * Add nontemporal tests
+  * Output Nontemporal for images
+  * Remove 'nontemporal nontemporal' in comment
+  * Add more nontemporal tests
+
+  [ dependabot[bot] ]
+  * Bump actions/setup-python from 5.3.0 to 5.4.0
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.28.5 to 3.28.8
+  * Ignore clangd .cache
+
+  [ Juan Ramos ]
+  * cmake: Cleanup CMake code
+
+  [ alelenv ]
+  * Add support for GL_NV_linear_swept_spheres.
+
+  [ Juan Ramos ]
+  * ci: Fix emscripten build
+
+  [ Sven van Haastregt ]
+  * Emit SPV_EXT_opacity_micromap if GL extension is present
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.28.8 to 3.28.9
+
+  [ dependabot[bot] ]
+  * Bump hendrikmuhs/ccache-action from 1.2.16 to 1.2.17
+
+  [ Karen Webb ]
+  * Warn if using GL_EXT_nontemporal_keyword with GLSL memory model
+
+  [ Takuto Ikuta ]
+  * Add missing include headers
+
+  [ Spencer Fricke ]
+  * Throw error if using in/out with struct pointer
+
+  [ David Neto ]
+  * kokoro: use streamlined license checker image
+
+  [ Juan Ramos ]
+  * ci: Add find_package testing
+
+  [ David Neto ]
+  * kokoro: linux: use cpp-builder image instead of radial-build
+
+  [ Karen Webb ]
+  * EXT_nontemporal_keyword: Don't warn when using nontemporal as an identifier (i.e. when extension disabled).
+
+  [ dependabot[bot] ]
+  * Bump actions/upload-artifact from 4.6.0 to 4.6.1
+
+  [ dependabot[bot] ]
+  * Bump ossf/scorecard-action from 2.4.0 to 2.4.1
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.28.9 to 3.28.10
+
+  [ Jeremy Hayes ]
+  * Update known_good.json
+  * Update CHANGES for 15.2.0
+
+ -- john <john@odin>  Tue, 04 Mar 2025 09:11:47 -0700
+
 glslang (15.1.0-2~rc4-1lunarg22.04-1) jammy; urgency=medium
 
   [ John Zupin ]
