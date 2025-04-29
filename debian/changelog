@@ -1,3 +1,52 @@
+glslang (15.3.0~rc1-1lunarg24.04-1) noble; urgency=medium
+
+  [ Jeremy Hayes ]
+  * Update Ubuntu runners
+
+  [ Jeff Bolz ]
+  * Add missing error checks for bfloat16 math
+
+  [ David Neto ]
+  * validation fails for spv.exportFunctions.comp when no linking performed
+  * Update known-good: newer SPIRV-Tools and SPIRV-Headers
+  * Update listing of validation failures
+
+  [ Zackery Mason-Blaug ]
+  * Fix several issues with link-time implicit array size merging
+
+  [ dependabot[bot] ]
+  * Bump actions/upload-artifact from 4.6.1 to 4.6.2
+
+  [ dependabot[bot] ]
+  * Bump actions/setup-python from 5.4.0 to 5.5.0
+
+  [ dependabot[bot] ]
+  * Bump github/codeql-action from 3.28.11 to 3.28.15
+
+  [ Jeremy Hayes ]
+  * Fix continuous deployment
+
+  [ Awata Yuichi ]
+  * DebugSourceContinued をサポートします
+
+  [ Zackery Mason-Blaug ]
+  * LiveTraverser no longer traverses switch cases that are statically not accessed
+
+  [ Jan Kelemen ]
+  * Remove -fno-exceptions being set unconditionally for GCC
+
+  [ dependabot[bot] ]
+  * Bump lukka/get-cmake from 3.31.6 to 4.0.1
+
+  [ Zackery Mason-Blaug ]
+  * Implement optional cross-stage check for input with no matching output
+
+  [ Jeremy Hayes ]
+  * Update known_good.json
+  * Update CHANGES for 15.3.0
+
+ -- john <john@odin>  Tue, 29 Apr 2025 09:41:01 -0600
+
 glslang (15.1.0-60~rc1-1lunarg24.04-1) noble; urgency=medium
 
   [ Juan Ramos ]
